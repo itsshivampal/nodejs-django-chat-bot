@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>www.xpiriance.com</title>
+          <meta name = "viewport" content = "width = device-width, initial-scale =1.0">
+          <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />      
+          <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+          <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+          <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+          <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <link rel="stylesheet" type="text/css" href="home.css">
+    </head>
+
+    <style type="text/css">
+
+    .ads_img{
+      background-image: url("../static/images/user.png");
+      background-size: cover;
+      width: 100%;
+      height: 400px;
+      padding-top: 7%;
+      
+      
+    }
+      .flow-text{
+        width: 92%;
+        font-size: 140%;
+        text-align: justify;
+      }
+      .about_text{
+        font-size: 250%;
+      }
+      .footer_item {
+        display: flex;
+      }
+      .footer_item li{
+       margin-left: 5%;
+      }
+      .icon a{
+        margin-left: 2%;
+        font-size: 110%;
+        color: #000;
+      }
+      .logo_name{
+        width: 11%;
+        margin-left: 10%;
+        margin-top: 1%;
+        text-align: center;
+      }
+      .login{
+        margin-right: 8%;
+        color: #000;
+      }
+      .nav-wrapper{
+        padding-right: 8%;
+      }
+      nav ul li:hover {
+     background-color: white;
+    }
+       /* Start Responsive_ design*/
+
+ /* Start on mobile_device */
+
+     @media (max-width: 440px) {
+     body{
+      margin: 0;
+      padding: 0;
+      margin-right: 0;
+      padding-right: 0;
+     }
+     nav {
+      margin: 0;
+      padding: 0;
+     }
+     .logo_name{
+        width: 30%;
+        margin-left: 40%;
+        margin-top: 5%;
+        text-align: center;
+      }
+      .about_text{
+        font-size: 200%;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      .flow-text{
+        width: 100%;
+        margin-top: -1%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .page-footer {
+        visibility: hidden;
+        display: none;
+      }
+      .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .footer{
+        bottom: 2%;
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+
+     }
+
+     @media screen and (max-width: 640px) and (min-width: 440px)
+     {
+       body{
+      margin: 0;
+      padding: 0;
+      margin-right: 0;
+      padding-right: 0;
+     }
+     nav {
+      margin: 0;
+      padding: 0;
+     }
+     .logo_name{
+        width: 25%;
+        margin-left: 40%;
+        margin-top: 3%;
+        text-align: center;
+      }
+      .about_text{
+        font-size: 200%;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      .flow-text{
+        width: 100%;
+        margin-top: -1%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .page-footer {
+        visibility: hidden;
+        display: none;
+      }
+      .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .footer{
+        bottom: 2%;
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+
+
+     }
+
+    /* end mobile_device*/
+
+    /* Start on tab_device */
+    
+     @media screen and (max-width: 1007px) and (min-width: 641px){
+       
+     body{
+      margin: 0;
+      padding: 0;
+      margin-right: 0;
+      padding-right: 0;
+     }
+     nav {
+      margin: 0;
+      padding: 0;
+     }
+     .logo_name{
+        width: 15%;
+        margin-left: 35%;
+        margin-top: 2%;
+        text-align: center;
+      }
+      .about_text{
+        font-size: 200%;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      .flow-text{
+        width: 100%;
+        margin-top: -1%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .page-footer {
+        visibility: hidden;
+        display: none;
+      }
+      .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .footer{
+        bottom: 2%;
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+
+
+     }
+
+
+    /* End on tab_device */
+
+
+    /* Start on large_device */
+
+     @media (min-width: 1005px) {
+      
+      .footer-mob{
+        visibility: hidden;
+        display: none;
+      }
+      .footer{
+        visibility: hidden;
+        display: none;
+      }
+
+     }
+
+    /* End on large_device*/
+
+
+
+
+
+
+
+
+
+    /* End Responsive_design */
+    </style>
+    <body>
+    <nav>
+    <div class="nav-wrapper white">
+      <a href="/"><img src="../static/images/xpiriance_logo.png" class="logo_name"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/login/" class="login"><b>Login/Signup</b></a></li>
+      </ul>
+    </div>
+    </nav>
+    <div class="row">
+      <div class="col s12">
+        <div class="ads_img">
+          <p style=" font-size: 300%; text-align: center; margin-top: -3%; color: #fff;">Advertise on Xpiriance</p><p style="text-align: center; color: #fff; font-size: 150%; margin-top: -3%; font-family: 'Nunito Sans', sans-serif;">World largest young social network<br> your ideal customers here !</p>
+        </div>
+      </div>
+    </div>
+
+     <div class="row">   
+      <div class="col s2">
+        .
+      </div>
+      <div class="col s12 m12 l7 xl7">
+         <p class="about_text">Why chose partner with xpiriance</p>
+            <p class="flow-text"> We are growing fastest and actual people need in current time over the world </p> 
+
+             <p class="flow-text"> How you engage with Peoples and express yourself on Xpiriance is done through the lens of what your social connections are curious to learn about you. Through the natural exchange of issues and solution, Xpiriance aims to be a safe, fun and engaging place for learning more about yourself and exploring the social world around you.
+            </p>
+
+            <p class="flow-text"><b>The World seeking Need Your Help.</b></p>
+            <p class="about_text">Mission</p>
+            <p class="flow-text" style="margin-top: -4%;">World largest Community where people get solution any type of problem in real time and help each other & make a better world. </p>
+
+            <p class="about_text">Vission</p>
+            
+        </div>
+        <div class="col s3">
+          
+        </div>
+      </div>
+      <footer class="page-footer teal">
+          <div class="container">
+            <div class="row">
+              <div class="col l12 offset-l2 s12">
+                <ul class="footer_item">
+                  <li><a class="grey-text text-lighten-3" href="../about-us/">About Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../contact/">Contact Us</a></li>                  
+                  <li><a class="grey-text text-lighten-3" href="../privacy-policy/">Privacy Policy</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../terms-conditions/">Term & Condition</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../career-with-us/">Career</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../business-with-us">Advertisement</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container" style="text-align: center;">
+            &copy; Xpiriance Copyright 2019.
+            <span style="margin-left: 5%;">Subscribe on</span>
+            <span class="icon">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            </span>
+            </div>
+          </div>
+        </footer>
+        <div class="footer">
+        <a href="../about-us" class="about_word">About Us</a>
+        <a href="../career-with-us" class="career_word">Career with Us</a>
+        <a href="../business-with-us" class="business_word">Business with Us</a>
+        <a href="../terms-conditions" class="term_word">Terms &amp; Conditions</a>
+        <a href="../privacy-policy" class="privacy_word">Privacy Policy</a>
+        <a href="../contact" class="contact_word">Contact Us</a>
+        </div>
+        <div class="footer-mob" style="text-align: center;">
+            <div class="container">
+            <span>Subscribe on</span>
+            <span class="icon">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            </span>
+            </div>
+            <span><br>&copy; Xpiriance Copyright 2019.</span>
+        </div>
+    </body>
+    </html>

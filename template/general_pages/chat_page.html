@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xpiriance Real Time Chat</title>
+
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../static/lib/css/materialize.min.css"  media="screen,projection"/> -->
+    <script type="text/javascript" src="../static/lib/js/jquery-3.3.1.min.js"></script>
+    <!-- <script type="text/javascript" src="../static/lib/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../static/lib/js/stickyfill.js"></script>
+    <link rel="stylesheet" href="../static/lib/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../static/lib/css/font-awesome.css"/>
+ -->
+    <script src="http://localhost:4000/socket.io/socket.io.js"></script>
+
+    <!-- <script type="text/javascript" src="../static/js/general_js/header.js"></script>
+    <link type="text/css" rel="stylesheet" href="../static/css/general_css/header.css"> -->
+
+
+</head>
+<body>
+
+
+    <!-- <div class="row no_padding_margin">
+
+        <div class="col s12 header_section" id="no_padding_margin">
+
+            <div class="col s3" id="no_padding_margin">
+                <div class="col s12">
+                    <a href="/"><img src="../static/images/xpiriance_logo.png" class="logo_name"></a>
+                </div>
+            </div>
+
+            <div class="col s5" id="no_padding_margin">
+                <div id="search_box">
+                    <input type="search" placeholder="Search" id="search">
+                </div>
+            </div>
+
+            <div class="col s4" id="no_padding_margin">
+                <div class="right_header">
+
+                    <div class="">
+                        <a href="" id="user_notifications"><i class="fa fa-bell" aria-hidden="true" id="header_icons"></i></a>
+                        <a href="" id="user_messages"><i class="fa fa-comments" aria-hidden="true" id="header_icons"></i></a>
+                    </div>
+
+                    <div class="">
+
+                        <a href="" id="user_profile"><img id="user_image" src="" class="user_image"></a>
+
+                        <a class='dropdown-trigger' id="dropdown_button" data-target='dropdown_option' data-activates="dropdown_option" data-beloworigin="true">
+                            <span style="margin-right: 5px;" id="user_name"></span>
+                            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                        </a>
+
+                        <ul id='dropdown_option' class='dropdown-content'>
+                            <li><a href="" id="user_profile_link">Profile</a></li>
+                            <li><a href="" id="user_settings"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
+                            <li><a href="" id="user_bookmark"><i class="fa fa-bookmark" aria-hidden="true"></i>Bookmarks</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="/logout/"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+
+        <div class="col s12" style="padding-top: 100px; height: 100vh">
+            <div class="col s3">
+                <p><a href="http://127.0.0.1:8000/chat-shivampa/">Shivam Pal</a></p>
+                <p><a href="http://127.0.0.1:8000/chat-vikramsingh/">Vikram Singh</a></p>
+                <p><a href="http://127.0.0.1:8000/chat-deepakkumar/">Deepak Kumar</a></p>
+            </div>
+
+            <div class="col s6">
+
+                <div id="chat_messages">
+                    
+                </div>
+
+                <textarea placeholder="write your message here"></textarea>
+                
+            </div>
+
+            <div class="col s3">
+                <div id="status_text">
+                    
+                </div>
+                <a class="btn" id="start_chat" style="margin-top: 50px;">Start Chat</a><br>
+                <a class="btn" id="decline_request" style="margin-top: 50px;">End Chat</a>
+                <a class="btn" id="decline_request" style="margin-top: 50px;">Decline</a>
+                <a class="btn" id="accept_request" style="margin-top: 50px;">Accept</a>
+                <a class="btn" id="block_request" style="margin-top: 50px;">Block</a>
+                <a class="btn" id="cancel_block_request" style="margin-top: 50px;">Cancel Block</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+        var page_url = window.location.href;
+        var present_user = page_url.split("-")[1].split("/")[0];
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+
+        function get_chat_status(){
+
+            $.ajax({
+                url :  'http://127.0.0.1:8000/profile/get_user_chat_status/',
+                type : "GET",
+                data : {
+                    present_chat_user: present_user,
+                    csrfmiddlewaretoken : csrftoken,
+                },
+                success : function(response_data) {
+                    console.log(response_data);
+                    action_to_status(response_data);
+
+                },
+                error : function(xhr,errmsg,err) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+        }
+
+        function action_to_status(response_data){
+            if(response_data["status"] == "0"){
+                $("#start_chat").css("display","block");
+                $("#end_chat").css("display","none");
+                $("#decline_request").css("display","none");
+                $("#accept_request").css("display","none");
+                $("#block_request").css("display","none");
+                $("#cancel_block_request").css("display","none");
+
+                $("#status_text").empty();
+                $("#status_text").append("<p>You can send him request after clicking at start chat</p>");
+            }
+
+            else if(response_data["status"] == "1"){
+                if(response_data["requested_action_user"]){
+                    $("#status_text").empty();
+                    $("#status_text").append("<p>Your request is pending, if you want to cancel than you can cancel by clicking decline button</p>");
+
+                    $("#start_chat").css("display","none");
+                    $("#end_chat").css("display","none");
+                    $("#decline_request").css("display","block");
+                    $("#accept_request").css("display","none");
+                    $("#block_request").css("display","none");
+                    $("#cancel_block_request").css("display","none");
+                }
+
+                else{
+                    $("#status_text").empty();
+                    $("#status_text").append("<p>You have a request, please accept it. If you don't want than you can decline it or block it!!!</p>");
+
+                    $("#start_chat").css("display","none");
+                    $("#end_chat").css("display","none");
+                    $("#decline_request").css("display","block");
+                    $("#accept_request").css("display","block");
+                    $("#block_request").css("display","block");
+                    $("#cancel_block_request").css("display","none");
+                }
+            }
+
+            else if(response_data["status"] == "2"){
+                $("#start_chat").css("display","none");
+                $("#end_chat").css("display","block");
+                $("#decline_request").css("display","none");
+                $("#accept_request").css("display","none");
+                $("#block_request").css("display","block");
+                $("#cancel_block_request").css("display","none");
+
+                $("#status_text").empty();
+                $("#status_text").append("<p>You can close this chat by clicking at end chat button or block this person by clicking at block button</p>");
+            }
+
+            else if(response_data["status"] == 3){
+                $("#start_chat").css("display","block");
+                $("#end_chat").css("display","none");
+                $("#decline_request").css("display","none");
+                $("#accept_request").css("display","none");
+                $("#block_request").css("display","none");
+                $("#cancel_block_request").css("display","none");
+
+                $("#status_text").empty();
+                $("#status_text").append("<p>You can send him request after clicking at start chat</p>");
+            }
+
+            else if(response_data["status"] == 4){
+                if(response_data["requested_action_user"]){
+                    $("#start_chat").css("display","none");
+                    $("#end_chat").css("display","none");
+                    $("#decline_request").css("display","none");
+                    $("#accept_request").css("display","none");
+                    $("#block_request").css("display","none");
+                    $("#cancel_block_request").css("display","block");
+
+                    $("#status_text").empty();
+                    $("#status_text").append("<p>You can unblock this user by clicking cancel block button</p>");
+                }
+                else{
+                    $("#start_chat").css("display","none");
+                    $("#end_chat").css("display","none");
+                    $("#decline_request").css("display","none");
+                    $("#accept_request").css("display","none");
+                    $("#block_request").css("display","none");
+                    $("#cancel_block_request").css("display","none");
+
+                    $("#status_text").empty();
+                }
+            }
+        }
+
+        $("#start_chat").click(function(){
+            $.ajax({
+                url :  'http://127.0.0.1:8000/profile/start_chat_request/',
+                type: "GET",
+                data: {
+                    present_chat_user: present_user,
+                    csrfmiddlewaretoken : csrftoken,
+                },
+                success : function(response_data) {
+                    console.log(response_data);
+                    get_chat_status();
+
+                },
+                error : function(xhr,errmsg,err) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+        });
+
+        $("#accept_request").click(function(){
+            $.ajax({
+                url :  'http://127.0.0.1:8000/profile/accept_chat_request/',
+                type: "GET",
+                data: {
+                    present_chat_user: present_user,
+                    csrfmiddlewaretoken : csrftoken,
+                },
+                success : function(response_data) {
+                    console.log(response_data);
+                    get_chat_status();
+                },
+                error : function(xhr,errmsg,err) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+        });
+
+        $("#decline_request").click(function(){
+            $.ajax({
+                url :  'http://127.0.0.1:8000/profile/decline_chat_request/',
+                type: "GET",
+                data: {
+                    present_chat_user: present_user,
+                    csrfmiddlewaretoken : csrftoken,
+                },
+                success : function(response_data) {
+                    console.log(response_data);
+                    get_chat_status();
+
+                },
+                error : function(xhr,errmsg,err) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+        });
+
+        $("#block_request").click(function(){
+            $.ajax({
+                url :  'http://127.0.0.1:8000/profile/block_chat_request/',
+                type: "GET",
+                data: {
+                    present_chat_user: present_user,
+                    csrfmiddlewaretoken : csrftoken,
+                },
+                success : function(response_data) {
+                    console.log(response_data);
+                    get_chat_status();
+
+                },
+                error : function(xhr,errmsg,err) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+        });
+
+        $("#cancel_block_request").click(function(){
+            $.ajax({
+                url :  'http://127.0.0.1:8000/profile/block_chat_request/',
+                type: "GET",
+                data: {
+                    present_chat_user: present_user,
+                    csrfmiddlewaretoken : csrftoken,
+                },
+                success : function(response_data) {
+                    console.log(response_data);
+                    get_chat_status();
+
+                },
+                error : function(xhr,errmsg,err) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+        });
+
+        get_chat_status();
+    </script>
+
+    <script type="text/javascript">get_header_data();</script>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="messages-list">
+		
+	</div>
+
+	<form style="margin-top: 50px;">
+		<div>
+			<label class="control-label">Name</label>
+	        <input id="name" type="text" class="form-control" placeholder="Username" maxlength="20" required />
+	    </div>
+	    <div>
+	    	<label class="control-label">Message</label>
+	    	<input id="message" type="text" class="form-control" placeholder="Enter your message here" required maxlength="140" />
+	    </div>
+	    <input type="submit" id="submit" name="">
+	</form>
+
+	
+
+
+<script>
+
+
+    var page_url = window.location.href;
+    var chat_to = page_url.split("-")[1].split("/")[0];
+    var chat_id;
+    var chat_from;
+
+
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getCookie('csrftoken');
+
+    function get_chat_status(){
+
+        $.ajax({
+            url :  'http://127.0.0.1:8000/profile/get_chat_session_data/',
+            type : "GET",
+            data : {
+                present_chat_user: chat_to,
+                csrfmiddlewaretoken : csrftoken,
+            },
+            success : function(response_data) {
+                chat_id = response_data["chat_id"];
+                chat_from = response_data["chat_from"];
+                console.log(chat_id);
+                console.log(chat_to);
+                console.log(chat_from);
+                chat_backend();
+
+            },
+            error : function(xhr,errmsg,err) {
+                console.log(xhr.status + ": " + xhr.responseText);
+            }
+        });
+    }
+
+    get_chat_status();
+
+
+
+
+
+function chat_backend(){
+
+    var host = 'localhost';
+    var nodejs_port = '4000';
+    var socket = io(host + ':' + nodejs_port);
+    $(function() {
+        updateScroll();
+    });
+
+    $('#submit').click(function() {
+        var msg = $('#message');
+        var name = $('#name');
+        if(msg.val().trim() !== "" && name.val().trim() !== "") {
+            msgObject = {
+                'user_name': name.val().trim(),
+                'message': msg.val().trim(),
+                'chat_id': chat_to,
+            };
+            socket.emit('message', msgObject);
+        }
+        console.log(msg.val(''));
+        return false;
+    });
+
+
+
+    var data = {
+        chat_id: chat_id,
+        chat_to: chat_to,
+        chat_from: chat_from,
+    }
+
+
+    socket.on('connect', function(){
+        socket.emit('join', data, function(err){
+            console.log(err);
+        });
+    })
+
+    socket.on('revert_msg', function(data){
+        console.log(data);
+        $("#messages-list").append(data);
+    })
+
+    
+
+
+    socket.on('getMessage', function(msgObject) {
+        var name = msgObject.user_name;
+        var msg = msgObject.message;
+        $('#messages-list').append("<strong>" + name + "</strong> &nbsp; " + msg + "</br>");
+        updateScroll();
+    });
+
+    function updateScroll(){
+        var element = document.getElementById("messages-list");
+        element.scrollTop = element.scrollHeight;
+    }
+
+    function get_all_message(){
+
+    }
+
+}
+</script>
+
+</body>
+</html>

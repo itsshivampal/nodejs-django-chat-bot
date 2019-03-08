@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xpiriance</title>
+
+    <!-- These are fixed css and js files need to include in every page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  -->
+    <link type="text/css" rel="stylesheet" href="../static/lib/css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="../static/lib/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../static/lib/js/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="../static/js/stickyfill.js"></script> -->
+    <link rel="stylesheet" href="../static/lib/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../static/lib/css/font-awesome.css"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+     
+
+    
+    <!-- These are required css files used in this page -->
+    <link type="text/css" rel="stylesheet" href="../static/css/authentication_css/authentication_page.css">
+
+    <!-- These are required js files used in this page -->
+    <script type="text/javascript" src="../static/js/authentication_js/login_page.js"></script>
+    
+
+</head>
+
+<body>
+
+
+
+
+    <div class="row login_signup_page">
+
+        <div class="col l12" id="page_header">
+            <a href="/"><img src="../static/images/xpiriance_logo.png" class="logo_name"></a>
+            <a href="/signup/"><p class="signup_btn"><b>Sign Up</b></p></a>
+        </div>
+
+        <div class="col l12" style="margin-top: 4%;">
+
+            <div class="col l7 xl7" id="main_page">
+                <div class="left_login">
+                    
+                    <b class="bold_land">Get help. Get better.</b>
+                    <p class="flow-text">No matter what's troubling you, get the support <br>you need, right here, right now.</p>
+                    <img src="../static/images/landing_page_image.jpg" class="login_img">
+                </div>  
+            </div>
+
+
+            <div class=" row col s12 m12 l5 xl5">
+
+                <div class="mob_logo">
+                    <a href="/"><img src="../static/images/xpiriance_logo.png" class="mob_logo_name"></a>
+                </div>
+
+
+                <a href="/signup/"><p class="mob_signup_btn"><b>Sign Up</b></p></a>
+
+                <div class="col s12" style="margin-top: 1%;">
+                    <b class="sign_word">Sign in</b>
+
+                    <div class="tab-content" id="login">
+                    
+                        <div class="col s12 field-wrap input-field">
+                            <input class="login_email" id="login_email" name="email" Placeholder="Your Email or Username" type="text" required  title="Please enter your email or username"/>
+                            <p class="login_email_error_message" id="email_format" style="margin-left: 8%;">
+                                
+                            </p>
+                        </div>
+
+
+                        <div class="col s12 field-wrap input-field">
+                            <input class="login_password" type="password" id="login_password-field" required autocomplete="off" placeholder="Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Please enter password" name="password" />
+
+                        </div>
+                        
+                        <div class="col s12" id="sign_btn0">
+                            <div class="col s12 login_btn btn ">
+                                <b class="sign_word_btn">Sign in</b>
+                            </div>
+                        </div>
+
+                        <div class="col s12 login_form_status" id="login_form_status">
+
+                        </div>
+
+                        <div class="col s12">
+                            <p><a href="/forget-password/"><span id="forgot">Forgot Password</span></a></p>
+                        </div>
+
+
+                        <div class="col s12" style="margin-top: 10%;">
+                            <span class="sign_word-or">Sign in with: </span>
+                            <span class="icon">
+                                <a href=""><i class="fa fa-google other_sign_icon" aria-hidden="true" style="color: rgb(219,68,55); font-size: 25px;"></i></a>
+                                <a href=""><i class="fa fa-facebook other_sign_icon" aria-hidden="true" style="color: rgb(60,90,153);; font-size: 25px;"></i></a>
+                                <a href=""><i class="fa fa-twitter other_sign_icon" aria-hidden="true" style="color: rgb(29,161,242); font-size: 25px;"></i></a>
+                            </span>
+
+                        </div> 
+
+                        <script type="text/javascript"> login_form_validate(); </script>
+
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer1">
+        <ul style="display: flex;">
+            <li><a class="about_word" href="../about-us/">About Us</a></li>
+            <li><a class="about_word" href="../contact/">Contact Us</a></li>
+            <li><a href="../business-with-us" class="about_word">Business with Us</a></li>
+            <li><a class="about_word" href="../privacy-policy/">Privacy Policy</a></li>
+            <li><a class="about_word" href="../terms-conditions/">Term & Condition</a></li>
+            <li><a class="about_word" href="../career-with-us/">Career</a></li>
+            
+            <li class="follow_word">Follow on</li>
+            <li class="iconsoc"><a href="#" class="fa fa-facebook iconsoc"></a></li>
+            <li class="iconsoc"><a href="#" class="fa fa-twitter iconsoc"></a></li>
+            <li class="iconsoc"><a href="#" class="fa fa-google iconsoc"></a></a></li>
+            <li class="iconsoc"><a href="#" class="fa fa-instagram iconsoc"></a></li>
+        </ul>                             
+    </div>
+
+
+  
+    <div class="footer col s12 m12">
+        <a href="../about-us" class="about_word">About Us</a>
+        <a href="../career-with-us" class="career_word">Career with Us</a>
+        <a href="../business-with-us" class="business_word">Business with Us</a>
+        <a href="../terms-conditions" class="term_word">Terms &amp; Conditions</a>
+        <a href="../privacy-policy" class="privacy_word">Privacy Policy</a>
+        <a href="../contact" class="contact_word">Contact Us</a>
+    </div>
+     
+    <div class="footer-mob s12 m12" style="text-align: center;">
+        <div class="container">
+            <span style>Subscribe on</span>
+            <span class="icon">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </span>
+        </div>
+    </div>
+           
+    <script type="text/javascript"> initailise_page();</script>
+
+</body>
+</html>

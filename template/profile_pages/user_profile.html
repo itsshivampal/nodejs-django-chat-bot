@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xpiriance</title>
+
+    <!-- These are fixed css and js files need to include in every page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../static/lib/css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="../static/lib/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../static/lib/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="../static/lib/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../static/lib/css/font-awesome.css"/>
+    <script type="text/javascript" src="../static/lib/js/stickyfill.js"></script>
+
+    <link href="../static/lib/css/croppie.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../static/lib/js/croppie.min.js"></script>
+    
+    <!-- These are required css files used in this page -->
+    <!-- <link type="text/css" rel="stylesheet" href="../static/css/profile_dashboard.css"> -->
+    <link type="text/css" rel="stylesheet" href="../static/css/general_css/header.css">
+    <link type="text/css" rel="stylesheet" href="../static/css/profile_section/profile_dashboard_section.css">
+
+</head>
+<body>
+
+    <div class="row">
+
+
+        <!-- Section for upper top header -->
+            
+        <div class="col s12 header_section" id="no_padding_margin">
+
+            <!-- Following is a header section of this page
+            Its CSS file, you will get at general_css/header.css
+            Its JS file, you will get at general_js/header.js -->
+
+            <div class="col s3" id="no_padding_margin">
+                <div class="col s12">
+                    <a href="/"><img src="../static/images/xpiriance_logo.png" class="logo_name"></a>
+                </div>
+            </div>
+
+            <div class="col s5" id="no_padding_margin">
+                <div id="search_box">
+                    <input type="search" placeholder="Search" id="search">
+                </div>
+            </div>
+
+            <div class="col s4" id="no_padding_margin">
+                <div class="right_header">
+
+                    <div class="">
+                        <a href="" id="user_notifications"><i class="fa fa-bell" aria-hidden="true" id="header_icons"></i></a>
+                        <a href="" id="user_messages"><i class="fa fa-comments" aria-hidden="true" id="header_icons"></i></a>
+                    </div>
+
+                    <div class="">
+
+                        <a href="" id="user_profile"><img id="user_image" src="" class="user_image"></a>
+
+                        <a class='dropdown-trigger' id="dropdown_button" data-target='dropdown_option' data-activates="dropdown_option" data-beloworigin="true">
+                            <span style="margin-right: 5px;" id="user_name"></span>
+                            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                        </a>
+
+                        <ul id='dropdown_option' class='dropdown-content'>
+                            <li><a href="" id="user_profile_link">Profile</a></li>
+                            <li><a href="" id="user_settings"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
+                            <li><a href="" id="user_bookmark"><i class="fa fa-bookmark" aria-hidden="true"></i>Bookmarks</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="/logout/"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Section for upper top header ends here -->
+
+
+
+        <!-- Section for profile main section -->
+
+        <div class="s12 profile_page_dashboard" style="padding-top: 100px;">
+
+            <div class="col s8 offset-s2">
+
+                <div class="col s12" style="padding: 0px;">
+
+                    <div class="col s4 profile_contain_img">
+                        <img class="materialboxed user_profile_image" id="user_profile_image" src="../static/images/user_profile_image.jpg">
+                        <button class="update_profile" id="update_profile">Change Profile</button>
+                    </div>
+
+
+
+                    <div id="profile_modal" class="profile_modal">
+                        <div class="profile-modal-content">
+                            <span class="close">&times;</span>
+                            <div class="" style="width: 100%;">
+                                <div id="upload-demo">
+                                </div>
+                                <input type="hidden" id="imagebase64" name="imagebase64">
+                            </div>
+
+                            <div style="width: 100%">
+                                <div class="file-field input-field upoload_profile_button" style="margin-left: 5%;">
+                                    <div class="btn upload_button">
+                                        <span>Upload</span>
+                                        <input type="file" id="upload_profile">
+                                    </div>
+                                    <div class="file-path-wrapper" style="display:none">
+                                        <input class="file-path validate" type="text">
+                                    </div>
+                                </div>
+                                <input name="submit" type="submit" value="Save it!" class="send_profile" style="margin-right: 5%;" />
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col s8">
+                        <div class="profile_contain_intro">
+                            <ul>
+                                <a href="" class="follow_button">Follow Now</a>
+                            </ul>
+                            <ul>
+                                <li class="name_profile"><p>Shivam Pal</p></li>
+                                <li class="organisation">
+                                    <ul style="display: flex;">
+                                        <li style="margin-top: -15px;"><i class="material-icons" style="font-size: 150%;">school</i></li>
+                                        <li style="margin-top: -30px; margin-left: 10px;"><p>IIT Kanpur, Uttar Pradesh (India)</p></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <div class="col s12 detail" style="padding: 0px;">
+                                <div class="col s4" style="text-align: left; padding: 0px;">
+                                    <span>Xpert Points &nbsp; <b>130</b></span>
+                                </div>
+                                <div class="col s4" style="text-align: center; padding: 0px;">
+                                    <span>Followers &nbsp; <b>400</b></span>
+                                </div>
+                                <div class="col s4" style="text-align: right; padding: 0px;">
+                                    <span>Following  &nbsp; <b>500</b></span>
+                                </div>
+                            </div>
+
+                            <div class="col s12 user_bio" style="padding: 0px;">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                            </div>
+                       
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col s12" style="border: 1px solid rgba(238,238,238 ,1); margin-top: 40px;">
+
+                    <div class="header_option"><b>Timeline</b></div>
+                    <div class="header_option">About</div>
+                    <div class="header_option">Discussions</div>
+                    <div class="header_option">Expereinces</div>
+                    <div class="header_option">Reviews</div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        
+
+
+
+    </div>
+
+
+    <script type="text/javascript" src="../static/js/profile_section/profile_dashboard_section.js""></script>
+    <script type="text/javascript" src="../static/js/general_js/header.js"></script>
+
+    <script type="text/javascript">get_header_data();</script>
+    <script type="text/javascript">send_profile_dashboard_data();</script>
+
+
+
+        
+
+    </script>
+
+</body>
+ </html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xpiriance</title>
+
+    <!-- These are fixed css and js files need to include in every page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  -->
+    <link type="text/css" rel="stylesheet" href="../static/lib/css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="../static/lib/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../static/lib/js/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="../static/js/stickyfill.js"></script> -->
+    <link rel="stylesheet" href="../static/lib/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../static/lib/css/font-awesome.css"/>
+     
+
+    
+    <!-- These are required css files used in this page -->
+    <link type="text/css" rel="stylesheet" href="../static/css/authentication_css/signup_page.css">
+
+    <!-- These are required js files used in this page -->
+    <script type="text/javascript" src="../static/js/authentication_js/signup_page.js"></script>
+    
+
+</head>
+
+<body>
+
+    <h3 style="text-align: center;">This is Signup Page</h3>
+
+    <div class="row login_signup_page">
+        <div class=" row col s4 offset-s7 card-panel register_box">
+
+            <div class="col s12">
+
+                <div class="tab-content">
+
+                    <h4 class="Sign_up_free">Signup for free!!</h4>
+
+                    <div class="col s12">
+                        
+                        <div class="col s6 input-field field-wrap" style="margin: 0px;">
+                            <input  class="Sign_up_input" id="First_name" pattern="[A-Za-z]" type="text" placeholder="First name" name="First_name" required>
+                        </div>
+                        <div class="col s6 input-field field-wrap" style="margin: 0px;">
+                            <input  class="Sign_up_input" pattern="[A-Za-z]" id="Last_name" type="text" placeholder="Last name" name="Last_name" required>
+                        </div>
+                        <div class="col s12 username_format" id="username_format">
+                            
+                        </div>
+                    </div>
+
+                    <div class="row col s12 input-field field-wrap">
+                        <i class="fa fa-envelope prefix"id="icon"aria-hidden="true"></i>
+                        <input class="Sign_up_input" id="sign_up_email" title="Enter valid email id" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" placeholder="Enter your email id"required>
+                        <div class="col s12 email_error_message" id="email_format">
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col s12 field-wrap input-field">
+                        <i class="fa fa-user prefix" id="icon"aria-hidden="true"></i>
+                        <input class="Username" id="Username" name="Username" minlength="3" maxlength="12" Placeholder="Username" title="Enter your username" type="text" required autocomplete="off" />
+                        <div class="col s12 Username_format_message" id="username_format">
+                            
+                        </div>
+                    </div>
+
+                    <div class="col s12 field-wrap input-field">
+                        <i class="fa fa-key toggle-password prefix" aria-hidden="true" id="icon"></i>
+                        <input class="sign_up_password" id="sign_up_password-field" type="password" required autocomplete="off"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Contain atleast a number, uppercase and lowercase letter, special character"  placeholder="Enter Password" name="password" />
+                        <div class="col s12 sign_up_password_strength_message" id="sign_up_password_strength">
+                            
+                        </div> 
+                    </div>
+               
+                    <div class="col s12" id="signup_show">
+                        <i toggle="#sign_up_password-field" class="fa fa-fw fa-eye sign_up_toggle-password" style="color:white;"></i>
+                    </div>
+
+                    <div class="col s12">
+                        <p>
+                            <a href="/login/"><span id="forgot">Already have account!</span></a>
+                            <a href=""><span id="terms_signup" style="float: right; color: white;">Terms &amp; Privacy Policies</span></a>
+                        </p>
+                    </div>
+
+                    <div class="col s4 offset-s4 sign_up_submit btn">
+                        Sign Up
+                    </div>
+
+                    <div class="col s12 other_login_mode">
+                        <div class="or" style="text-align: center; font-size: 15px; color: white; margin-bottom: 20px;">
+                            Signup with 
+                        </div>
+                        <div class="row col s2 offset-s4 social btn" style="background-color:#ff1744;">
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        </div>
+                        <div class="row col s2 offset-s1 social btn" style="background-color:#2196f3;">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script type="text/javascript"> signup_form_validate(); </script>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="footer" style="bottom: 30px; position: absolute; text-align: center;">
+        <a href="" style="margin-left: 20px; font-size: 15px;">About Us</a>
+        <a href="" style="margin-left: 20px; font-size: 15px;">FAQs</a>
+        <a href="" style="margin-left: 20px; font-size: 15px;">Career with Us</a>
+        <a href="" style="margin-left: 20px; font-size: 15px;">Business with Us</a>
+        <a href="" style="margin-left: 20px; font-size: 15px;">Terms &amp; Conditions</a>
+        <a href="" style="margin-left: 20px; font-size: 15px;">Privacy Policy</a>
+        <a href="" style="margin-left: 20px; font-size: 15px;">Contact Us</a>
+    </div>
+
+    <script type="text/javascript"> initailise_page();</script>
+
+</body>
+</html>

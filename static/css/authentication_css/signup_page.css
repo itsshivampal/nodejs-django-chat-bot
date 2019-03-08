@@ -1,0 +1,124 @@
+:before, *:after {
+    box-sizing: border-box;
+}
+
+.register_box{
+    background-color:#13232f;
+    opacity:.9;
+    margin-top: 40px;
+}
+
+
+.input{
+    height:10px;
+    color:white;
+}
+
+.head{
+   margin-bottom:18px; 
+}
+
+.Sign_Up{
+	background-color:#0091ea;
+	margin-top: 10px;
+}
+
+.Sign_up_free{
+    text-align:center;
+    color: white;
+    font-weight:bold;
+    font-size:20px;
+    margin-top:40px;
+    margin-bottom: 20px;
+
+}
+
+#sign_up_email{
+    height: 22px;
+    color: white;
+    margin-left:25px;
+    font-size: 14px;
+}
+
+
+
+.social{
+    border-radius:20px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+#icon{
+    font-size:18px;
+    color:white;
+}
+
+#email_format{
+    color:red;
+    height:5px;
+    margin-top:-8px;
+    margin-left:15px;
+    font-size:12px;
+}
+
+#First_name{
+    height:22px;
+    font-size: 14px;
+    color: white;
+}
+
+#Last_name{
+    height:22px;
+    font-size: 14px;
+    color: white;
+}
+
+
+#Username{
+    height: 22px;
+    /*padding-bottom:-10px;*/
+    color: white;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+#username_format{
+    color:red;
+    height:5px;
+    margin-top:-8px;
+    margin-left:15px;
+    font-size:12px;
+}
+
+#sign_up_password-field{
+    height: 22px;
+    /*padding-bottom:-10px;*/
+    color:white;
+    margin-left:26px;
+    font-size: 14px;
+}
+
+#sign_up_password_strength{
+    color:red;
+    height:5px;
+    margin-top:-8px;
+    margin-left:12px;
+    font-size:12px;
+
+}
+
+#signup_show{
+    float: right;
+    text-align: right;
+}
+
+.sign_up_submit{
+    float:center;
+    border-radius: 30px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}

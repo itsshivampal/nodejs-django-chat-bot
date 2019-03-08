@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Xpiriance</title>
+
+        <!-- These are fixed css and js files need to include in every page -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../../static/css/materialize.min.css"  media="screen,projection"/>
+        <script type="text/javascript" src="../../static/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../../static/js/materialize.min.js"></script>
+        <script type="text/javascript" src="../../static/js/stickyfill.js"></script>
+        <link rel="stylesheet" href="../../static/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="../../static/css/font-awesome.css"/>
+
+        <link href="../../static/css/croppie.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../../static/js/croppie.min.js"></script>
+
+        
+        <!-- These are required css files used in this page -->
+        <!-- <link type="text/css" rel="stylesheet" href="../../static/css/user_post.css"> -->
+        <!-- <link type="text/css" rel="stylesheet" href="../../static/css/header.css"> -->
+        <!-- <link type="text/css" rel="stylesheet" href="../../static/css/user_settings.css"> -->
+        <link type="text/css" rel="stylesheet" href="../../static/css/profile_dashboard.css">
+
+
+
+        <style type="text/css">
+            .side_navigation_option{
+                color: #424242;
+                padding: 16px;
+                padding-left: 25px;
+                font-size: 17px;
+                /*border-top: 1px solid rgb(200, 200, 200);*/
+                /*border-bottom: 1px solid rgb(200, 200, 200);*/
+                font-size: 15px;
+                font-weight: 600;
+                float: center;
+                /*background-color: #00838f;*/
+            }
+
+            .side_navigation_option:hover{
+                background-color: #a7ffeb;
+            }
+
+            .side_navigation_bar {
+                width: 20%;
+                margin-left: 2%;
+                z-index: -1;
+                /*background-color: white;*/
+                overflow-x: hidden;
+                padding-top: 20px;
+                padding-top: 40px;
+                margin-bottom: -20px;
+                float: left;
+            }
+
+            .main_box{
+                width: 70%;
+                float: left;
+                margin-left: 3%;
+                margin-top: 22px;
+                background-color: rgba(232,245,233,0.6);
+            }
+        </style>
+
+
+        
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.materialboxed').materialbox();
+            });
+        </script>
+
+        <style type="text/css">
+            #follow_card{
+                padding: 30px;
+                padding-top: 10px;
+            }
+
+            #card_image{
+                margin-left: 15%;
+                margin-right: 15%;
+                margin-top: 5%;
+                top: 5%;
+                width: 70%;
+                border-radius: 50%;
+            }
+
+            #card_name{
+                font-weight: 400;
+                font-size: 20px;
+            }
+
+            #card_follow_content{
+                padding: 10px;
+                text-align: center;
+
+            }
+
+            #card_details{
+                font-size: 15px;
+                font-weight: 500;
+                color: #616161;
+                /*height: 50px;*/
+                /*line-height: 100px;*/
+            }
+
+            #card_action{
+                padding-bottom: 5px;
+                padding-top: 4px;
+                text-align: center;
+
+            }
+
+            .card_button{
+                background-color: #00acc1;
+                text-transform: capitalize;
+                border-radius: 2px;
+                font-size: 15px;
+                line-height: 25px;
+                height: 25px;
+                padding-left: 20px;
+                padding-right: 20px;
+                /*padding-top: 3px;*/
+                /*padding-bottom: 3px;*/
+                text-align: center;
+            }
+        </style>
+
+
+
+    </head>
+    <body>
+
+       <div class="row">
+            
+            <div class="col s12 header_section" id="no_padding_margin">
+
+                <div class="col s3" id="no_padding_margin">
+                    <div class="col s12" style="padding: 0px;">
+                        <div class="logo_space card-panel">
+                            <span class="logo_name">Xpiriance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s6" id="no_padding_margin">
+                    <div id="search_box">
+                        <div class="col s12" style="margin: 0px; padding: 0px;">
+                            <input class="search" type="search" placeholder="Search for people, group and questions....." id="search">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s3" id="no_padding_margin">
+                    <div class="col s12" style="padding: 0px;">
+                        <div class="right_header card-panel">
+                            <img src="../static/images/image1.jpg" class="user_iamge">
+                            <i class="fa fa-cog" aria-hidden="true" id="header_icons"></i>
+                            <i class="fa fa-bell" aria-hidden="true" id="header_icons"></i>
+                            <i class="fa fa-envelope" aria-hidden="true" id="header_icons"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col s12" style="margin-top: 85px;">
+
+                <div class="col s12" id="user_dashboard">
+
+                    <div class=""  style="width: 20%; float: left; margin-left: 1%">
+                        <div class="col s12" id="no_padding_margin">
+                            <div class="card">
+                                <div class="card-image card_image">
+                                    <img class="materialboxed user_profile_image" src=" " id="user_profile_image">
+                                    <button class="update" id="update_profile"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="card-content" id="card_content">
+                                    <span class="card-title" id="user_name"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="profile_modal" class="profile_modal">
+                        <div class="profile-modal-content">
+                            <span class="close">&times;</span>
+                            <div class="" style="width: 100%;">
+                                <div id="upload-demo">
+                                </div>
+                                <input type="hidden" id="imagebase64" name="imagebase64">
+                            </div>
+
+                            <div style="width: 100%">
+                                <div class="file-field input-field upoload_profile_button" style="margin-left: 5%;">
+                                    <div class="btn upload_button">
+                                        <span>Upload</span>
+                                        <input type="file" id="upload_profile">
+                                    </div>
+                                    <div class="file-path-wrapper" style="display:none">
+                                        <input class="file-path validate" type="text">
+                                    </div>
+                                </div>
+                                <input name="submit" type="submit" value="Save it!" class="send_profile" style="margin-right: 5%;" />
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="" style="width: 76%; float: left; margin-left: 2%;">
+
+                        <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image1">
+                                <div class="overlay"></div>
+                                <button class="update" id="update1"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image2">
+                                <div class="overlay"></div>
+                                <button class="update" id="update2"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                            <div class="dashboard-image">
+                                <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image3">
+                                <div class="overlay"></div>
+                                <button class="update" id="update3"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                        </div>
+
+
+                        <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image4">
+                                <div class="overlay"></div>
+                                <button class="update" id="update4"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image5">
+                                <div class="overlay"></div>
+                                <button class="update" id="update5"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                            <div class="dashboard-image">
+                                <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image6">
+                                <div class="overlay"></div>
+                                <button class="update" id="update6"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                        </div>
+
+                        <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image7">
+                                <div class="overlay"></div>
+                                <button class="update" id="update7"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image8">
+                                <div class="overlay"></div>
+                                <button class="update" id="update8"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                            <div class="dashboard-image">
+                                <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image9">
+                                <div class="overlay"></div>
+                                <button class="update" id="update9"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                        </div>
+
+                        <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image10">
+                                <div class="overlay"></div>
+                                <button class="update" id="update10"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image11">
+                                <div class="overlay"></div>
+                                <button class="update" id="update11"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                            <div class="dashboard-image">
+                                <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image12">
+                                <div class="overlay"></div>
+                                <button class="update" id="update12"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                        </div>
+
+                        <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image13">
+                                <div class="overlay"></div>
+                                <button class="update" id="update13"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+
+                            <div class="dashboard-image">
+                                <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image14">
+                                <div class="overlay"></div>
+                                <button class="update" id="update14"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                            <div class="dashboard-image">
+                                <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image15">
+                                <div class="overlay"></div>
+                                <button class="update" id="update15"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                            </div>
+
+                        </div>
+
+                        <div id="dashboard_modal" class="dashboard_modal">
+                            <input type="text" id="dashboard_no" hidden="true" value="">
+                            <div class="dashboard-modal-content">
+                                <span class="close_dash_modal">&times;</span>
+                                <div style="width: 100%;">
+                                    <div id="upload-dashboard-demo"></div>
+                                    <input type="hidden" id="dashboard_imagebase64" name="imagebase64">
+                                </div>
+
+                                <div style="width: 100%;">
+                                    <div class="file-field input-field upoload_dashboard_button" style="margin-left: 5%;">
+                                        <div class="btn upload_button">
+                                            <span>Upload</span>
+                                            <input type="file" id="upload_dashboard">
+                                        </div>
+                                        <div class="file-path-wrapper" style="display:none">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                    <input name="submit" type="submit" value="Save it!" class="send_dashboard"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                
+            </div>
+
+
+            <div class="col s12">
+                <div class="col s12" id="user_introduction" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="col s8 offset-s2">
+                        <span id="add_user_intro"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s12" id="no_padding_margin">
+
+
+                <div class="side_navigation_bar" style="float: left;">
+ 
+                    <a href="" style="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-file-text" aria-hidden="true" style=""></i>&nbsp; &nbsp; &nbsp; Timeline</span>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-users" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; About You</span>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="side_navigation_option" style="background-color: #a7ffeb; color: #212121;">
+                            <span><i class="fa fa-user" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; Following</span>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; Followers</span>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <!-- I need to write code in following sections -->
+
+
+                <div id="user_follow_members" class="main_box" style="">
+
+                    
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+        <script type="text/javascript" src="../../static/js/profile_dashboard.js"></script>
+        <!-- <script type="text/javascript">get_user_profile_data();</script> -->
+
+        <script type="text/javascript">
+
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie != '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            var csrftoken = getCookie('csrftoken');
+
+            get_user_follow_data();
+
+
+            function get_user_follow_data(request_data){
+                var user_page = window.location.pathname.split("/")[1].split("-")[1];
+                $.ajax({
+                    url :  'http://127.0.0.1:8000/profile/send_follow_details/' + user_page + '/',
+                    type : "POST",
+                    data : {
+                        csrfmiddlewaretoken : csrftoken,
+                    },
+                    success : function(json) {
+                        append_following_data(json);
+                    },
+                    error : function(xhr,errmsg,err) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                });
+            }
+
+            function append_following_data(data){
+
+                var no_of_following = Object.keys(data).length;
+
+                var following_content = ['<div class="col s12">',].join("\n");
+                for(var i = 0; i<no_of_following; i++){
+                    if(i%3==0 && i!=0){
+                        following_content += [
+                            '</div>',
+                            '<div class="col s12">',
+                        ].join("\n");
+                    }
+                    following_content += [
+                        '<div class="col s4" id="follow_card">',
+                            '<a href="' + data[i]["user_profile_link"] + '">',
+                                '<div class="card">',
+                                    '<div class="card-image" style="padding-top: 3px;">',
+                                        '<img src="' + data[i]["user_image"] + '" id="card_image">',
+                                    '</div>',
+                                    '<div class="card-content" id="card_follow_content">',
+                                        '<p id="card_name">' + data[i]["user_full_name"] + '</p>',
+                                        '<p id="card_details">' + data[i]["user_intro"] + '</p>',
+                                    '</div>',
+                                    '<div class="card-action" id="card_action">',
+                                        '<a class="btn card_button" onClick="send_follow_request(this.id)" id="' + data[i]["user_username"] + '_' + data[i]["relation"] + '">' + data[i]["relation"] + '</a>',
+                                    '</div>',
+                                '</div>',
+                            '</a>',
+                        '</div>',
+                    ].join("\n");
+                }
+                following_content += ['</div>'].join("\n");
+                $("#user_follow_members").append(following_content);
+            }
+
+            // $('.card_button').click(function(){
+            //     var id = $(this).attr('id');
+            //     console.log(id);
+            // });
+
+            function send_follow_request(clicked_id){
+                var username = clicked_id.split("_")[0]
+                var request_type = clicked_id.split("_")[1]
+
+                $.ajax({
+                    url :  'http://127.0.0.1:8000/profile/user_follow_unfollow/' + username + '/' + request_type + '/',
+                    type : "POST",
+                    data : {
+                        csrfmiddlewaretoken : csrftoken,
+                    },
+                    success : function(json) {
+                        window.location.reload();
+                    },
+                    error : function(xhr,errmsg,err) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                });
+
+            }
+            
+        </script>
+        
+        <script type="text/javascript" src="../../static/js/get_profile_dashboard.js"></script>
+        <script type="text/javascript" src="../../static/js/send_profile_dashboard.js"></script>
+        <script type="text/javascript" src="../../static/js/edit_profile.js"></script>
+        <script type="text/javascript">get_settings_page_data();</script>
+        <!-- <script type="text/javascript">get_edit_profile_data();</script> -->
+
+
+    </body>
+ </html>

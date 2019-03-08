@@ -1,0 +1,305 @@
+/*@font-face  {
+    font-family: experience_text;
+    src : url('../fonts/SongMyung-Regular.ttf') format('truetype');
+}*/
+
+@font-face  {
+    font-family: activity_text;
+    src : url('../fonts/Courgette-Regular.ttf') format('truetype');
+}
+
+#card_panel{
+    padding: 2px;
+    padding-top: 8px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+.post-section{
+    margin-top: 0px;
+    padding: 0px;
+
+}
+
+
+.post-user-image-section{
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+.post-user-image{
+    width:40px;
+    height:40px;
+    border-radius:0px 20px 20px 0px;
+    float:left;
+    box-shadow: 0px 0px 2px;
+}
+
+.post-tags{
+    /*border-top: 1px solid #b0bec5;*/
+    /*border-bottom: 1px solid #b0bec5;*/
+    padding: 3px;
+}
+
+.chip{
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+}
+
+.no_chip{
+    background-color: white;
+    padding: 0px;
+}
+
+.post-user-intro-section{
+    padding-left: 50px;
+}
+
+.post-user-name{
+    margin-bottom:0px;
+    color: #455a64;
+    font-weight: 400;
+}
+
+.post-user-details{
+    margin-top: 0px;
+    font-size: 11px;
+    color: #78909c;
+    font-weight: 450;
+}
+
+.icons{
+  color: #00796b;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+.icon_numbers{
+    font-size: 13px;
+    color: #263238;
+}
+
+.iconslist{
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: 8px;
+}
+
+
+
+/*experience-post-group*/
+
+.who_posted{
+    margin: 3px;
+    font-size: 13px;
+    color: #455a64;
+}
+
+.who_posted_name{
+    font-weight: 500;
+}
+
+.who_posted_name:hover{
+    background-color: white;
+}
+
+.where_posted{
+    color: #01579b;
+    font-weight: 500;
+}
+
+.where_posted:hover{
+    background-color: white;
+}
+
+.experience-intro{
+    font-family: black;
+    font-weight: bold;
+    color: #424242;
+    font-size: 19px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.experience-text{
+    color: #37474f;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    font-family: experience_text;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+
+
+/*Question experience post group*/
+
+.question-text{
+    font-family: black;
+    font-weight: bold;
+    color: #546e7a;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+    /*text-align: justify;*/
+}
+
+.answer-user-image-section{
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+.answer-user-image{
+    width:36px;
+    height:36px;
+    border-radius:0px 18px 18px 0px;
+    float:left;
+    box-shadow: 0px 0px 2px;
+}
+
+.answer-user-intro-section{
+    padding-left: 50px;
+}
+
+.answer-user-name{
+    margin-bottom:0px;
+    color: #455a64;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.answer-user-details{
+    margin-top: 0px;
+    font-size: 10px;
+    color: #78909c;
+    font-weight: 450;
+}
+
+.answer-text{
+    color: #37474f;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    font-family: experience_text;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+
+
+.activity-line{
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    background-color: #e0e0e0;
+}
+
+.activity-text{
+    margin: 0px;
+    padding: 0px;
+    font-family: activity_text;
+    font-size: 20px;
+    color: #455a64;
+
+}
+
+
+/*Here css styling of our comment section starts*/
+
+.comment-user-image-section{
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+.comment-user-image{
+    width:30px;
+    height:30px;
+    border-radius:0px 15px 15px 0px;
+    float:left;
+    box-shadow: 0px 0px 2px;
+}
+
+.comment-user-intro-section{
+    padding-left: 40px;
+    padding-top: 0px;
+}
+
+.comment-user-name{
+    margin-bottom:0px;
+    padding-top: 0px;
+    font-weight: 400;
+    color: #616161;
+    font-size: 13px;
+}
+
+.comment-user-detail{
+    margin-top: 0px;
+    font-size: 10px;
+    color: #78909c;
+}
+
+.comment-text{
+    font-size: 15px;
+    color: #424242;
+    font-weight: 400;
+    text-align: justify;
+    margin-top: -8px;
+    padding: 0px;
+    margin-bottom: 0px;
+    font-family: serif;
+}
+
+/*From here styling of comment section ends*/
+
+
+.load-more-comments{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    color: #03a9f4;
+}
+
+
+.user-comment-write-section{
+    margin-top: 10px;
+}
+
+.comment-write-image{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+
+.comment-write-user-image{
+    width: 30px;
+    height: 30px;
+    border-radius: 0px 15px 15px 0px;
+    float: left;
+    box-shadow: 0px 0px 2px;
+}
+
+.user-write-comment{
+    margin-left: 15px;
+    padding-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    width: 90%;
+    border-radius: 15px 15px;
+}
+
+.write-comment{
+    width: 90%;
+    float: left;
+    font-size: 13px;
+    color: #757575;
+}
+
+

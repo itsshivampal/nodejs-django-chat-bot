@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paginator Page</title>
+	<script type="text/javascript" src="../static/lib/js/jquery-3.3.1.min.js"></script>
+
+	<style type="text/css">
+		.infinite-item{
+			height: 8vh;
+			border: 1px solid black;
+			vertical-align: middle;
+			line-height: 8vh;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="infinite-container">
+		
+	</div>
+
+
+	    	<!-- <a class="infinite-more-link" href="?page={{ numbers.next_page_number }}">More</a> -->
+	  	
+
+	<script type="text/javascript">
+
+		// var start_page = 1
+		var next_page;
+		// var current_page;
+
+
+		function getCookie(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie != '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = jQuery.trim(cookies[i]);
+		            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+
+		var csrftoken = getCookie('csrftoken');
+
+
+
+		function get_post(current_page){
+			$.ajax({
+                url :"http://127.0.0.1:8000/temp_page_data/",
+                type :"GET",
+                data :{
+                    "page" : current_page,
+                    csrfmiddlewaretoken : csrftoken,
+                },
+                success:function(json){
+                	for(var i = 0; i < 20; i++)
+                    	$(".infinite-container").append('<div class="infinite-item">' + json[i] + '</div>');
+                   	next_page = json["next_page"];
+                },
+                error : function(xhr,errmsg,err) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+		}
+
+		get_post(1);
+
+		$(window).scroll(function(){
+			console.log("working");
+	        var x = $(window).scrollTop();
+	        var y = $(window).height();
+	        var z = $(document).height();
+	        if(x+y >z - 10){
+	            get_post(next_page);
+	        }
+	    });
+	</script>
+</body>
+</html>

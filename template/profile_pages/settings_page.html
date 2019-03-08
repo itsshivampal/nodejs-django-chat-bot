@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xpiriance</title>
+
+    <!-- These are fixed css and js files need to include in every page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../../static/lib/css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="../../static/lib/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../static/lib/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="../../static/lib/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../static/lib/css/font-awesome.css"/>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    
+    <!-- These are required css files used in this page -->
+    <link type="text/css" rel="stylesheet" href="../../static/css/profile_section/user_settings.css">
+    <link type="text/css" rel="stylesheet" href="../../static/css/general_css/header.css">
+
+
+</head>
+<body>
+
+    <div class="row">
+
+        <!-- Section for upper top header -->
+            
+        <div class="col s12 header_section" id="no_padding_margin">
+
+            <!-- Following is a header section of this page
+            Its CSS file, you will get at general_css/header.css
+            Its JS file, you will get at general_js/header.js -->
+
+            <div class="col s3" id="no_padding_margin">
+                <div class="col s12">
+                    <a href="/"><img src="../../static/images/xpiriance_logo.png" class="logo_name"></a>
+                </div>
+            </div>
+
+            <div class="col s5" id="no_padding_margin">
+                <div id="search_box">
+                    <input type="search" placeholder="Search" id="search">
+                </div>
+            </div>
+
+            <div class="col s4" id="no_padding_margin">
+                <div class="right_header">
+
+                    <div class="">
+                        <a href="" id="user_notifications"><i class="fa fa-bell" aria-hidden="true" id="header_icons"></i></a>
+                        <a href="" id="user_messages"><i class="fa fa-comments" aria-hidden="true" id="header_icons"></i></a>
+                    </div>
+
+                    <div class="">
+
+                        <a href="" id="user_profile"><img id="user_image" src="" class="user_image"></a>
+
+                        <a class='dropdown-trigger' id="dropdown_button" data-target='dropdown_option' data-activates="dropdown_option" data-beloworigin="true">
+                            <span style="margin-right: 5px;" id="user_name"></span>
+                            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                        </a>
+
+                        <ul id='dropdown_option' class='dropdown-content'>
+                            <li><a href="" id="user_profile_link">Profile</a></li>
+                            <li><a href="" id="user_settings"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
+                            <li><a href="" id="user_bookmark"><i class="fa fa-bookmark" aria-hidden="true"></i>Bookmarks</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="/logout/"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Section for upper top header ends here -->
+
+    </div>
+
+    <div class="row">
+    	<div class="col s12" style="padding-top: 100px;">
+        	<div class="col s6 offset-s3 account_settings">
+        		<div class="col s12">
+        			<p class="" style="font-weight: bold;">Account Settings</p>
+        			<hr class="heading_divider" style="border: 0px solid white; height: 1px; background-color: rgba(238,238,238 ,1); ">
+        		</div>
+        		<div class="col s12 setting_option">
+        			<div class="col s4 option1">Username</div>
+        			<div class="col s6 option2" id="user_username"></div>
+        			<!-- <div class="col s2 option3">Edit</div> -->
+        		</div>
+
+        		<div class="col s12 setting_option">
+        			<div class="col s4 option1">Email</div>
+        			<div class="col s6 option2" id="user_email"></div>
+        			<!-- <div class="col s2 option3">Edit</div> -->
+        		</div>
+
+        		<div class="col s12 setting_option">
+        			<div class="col s4 option1">Name</div>
+        			<div class="col s6 option2">
+        				<span id="user_name"></span>
+        				<input type="text" id="user_name_edit_first" value="">
+                        <input type="text" id="user_name_edit_last" value="">
+        			</div>
+        			<div class="col s2 option3" id="name_edit">Edit</div>
+        		</div>
+
+        		<div class="col s12 setting_option">
+        			<div class="col s4 option1">Mobile</div>
+        			<div class="col s6 option2" id="user_mobile">
+                        <span id="user_mobile"></span>
+                        <input type="text" id="user_mobile_edit" value="">
+                    </div>
+        			<div class="col s2 option3" id="mobile_edit">Edit</div>
+        		</div>
+
+        		<div class="col s12 setting_option">
+        			<div class="col s4 option1">Gender</div>
+        			<div class="col s6 option2">
+                        <span id="user_gender"></span>
+                        <input type="text" id="user_gender_edit" value="">
+                    </div>
+        			<div class="col s2 option3" id="gender_edit">Edit</div>
+        		</div>
+
+        		<div class="col s12 setting_option">
+        			<div class="col s4 option1">Date of Birth</div>
+        			<div class="col s6 option2">
+                        <span id="user_dob"></span>
+                        <input type="text" id="user_dob_edit" value="">
+                    </div>
+        			<div class="col s2 option3" id="dob_edit">Edit</div>
+        		</div>
+
+        		<div class="col s12" style="margin-top: 5px;">
+        			<div class="col s4 option1">About You</div>
+        			<div class="col s8 option2">
+        				<textarea id="user_bio_data" class="materialize-textarea" style="margin: 0px; padding: 0px; font-size: 15px;"></textarea>
+        			</div>
+        			<!-- <div class="col s2 option3">Edit</div> -->
+        		</div>
+
+        		<div class="col s12" style="text-align: center;">
+        			<a class="btn settings_submit" id="update_user_data">Submit</a>
+        		</div>
+
+        	</div>
+        </div>
+    </div>
+
+
+    <div class="row">
+    	<div class="col s12" style="padding-top: 10px;">
+        	<div class="col s6 offset-s3 account_settings">
+        		<div class="col s12">
+        			<p class="" style="font-weight: bold;">Change Password</p>
+        			<hr class="heading_divider">
+        		</div>
+        		<div class="col s12 setting_option">
+        			<div class="col s5 option1">Old Password</div>
+        			<div class="col s7 option2"><input type="password" class="change_password_input" id="old_password" placeholder="Old Password" style="margin: 0px; padding: 0px; font-size: 14px; height: 25px; text-align: center; width: 60%; border-radius: 3px; border: 1px solid rgba(200, 200, 200, 1); background-color: transparent;"></div>
+        		</div>
+
+        		<div class="col s12 setting_option">
+        			<div class="col s5 option1">New Password</div>
+        			<div class="col s7 option2"><input type="password" class="change_password_input" id="new_password" placeholder="New Password" style="margin: 0px; padding: 0px; font-size: 14px; height: 25px; text-align: center; width: 60%; border-radius: 3px; border: 1px solid rgba(200, 200, 200, 1); background-color: transparent;"></div>
+        		</div>
+
+        		<div class="col s12 setting_option">
+        			<div class="col s5 option1">Confirm Password</div>
+        			<div class="col s7 option2"><input type="password" class="change_password_input" id="confirm_new_password" placeholder="Confirm Password" style="margin: 0px; padding: 0px; font-size: 14px; height: 25px; text-align: center; width: 60%; border-radius: 3px; border: 1px solid rgba(200, 200, 200, 1); background-color: transparent;"></div>
+        		</div>
+
+        		<div class="col s12" style="text-align: center;">
+        			<a class="btn settings_submit" id="change_password_data">Submit</a>
+        		</div>
+
+        	</div>
+        </div>
+    </div>
+
+
+    <div class="row">
+    	<div class="col s12" style="padding-top: 10px;">
+        	<div class="col s6 offset-s3 account_settings">
+        		<div class="col s12">
+        			<p class="" style="font-weight: bold;">Subscription</p>
+        			<hr class="heading_divider">
+        		</div>
+        		<div class="col s12 setting_option">
+        			<div class="col s10 offset-s1">
+						<label>
+							<input type="checkbox" class="filled-in" id="email_subscription">
+							<span style="color: black; font-weight: 450;">Get latest updates via Email</span>
+						</label>
+    				</div>
+        		</div>
+
+        		<div class="col s12 setting_option">
+        			<div class="col s10 offset-s1">
+						<label>
+							<input type="checkbox" class="filled-in" id="sms_subscription" />
+							<span style="color: black; font-weight: 450;">Get latest updates via text/sms</span>
+						</label>
+    				</div>
+        		</div>
+
+        		<div class="col s12" style="text-align: center;">
+        			<a class="btn settings_submit" id="send_subscription_data" style="">Submit</a>
+        		</div>
+
+        	</div>
+        </div>
+    </div>
+	  
+
+    <script type="text/javascript" src="../../static/js/general_js/header.js"></script>
+    <script type="text/javascript" src="../../static/js/profile_section/settings_page.js"></script>
+
+    <script type="text/javascript">get_header_data();</script>
+    <script type="text/javascript">get_settings_page_data();</script>
+
+
+</body>
+ </html>

@@ -1,0 +1,147 @@
+
+/*
+
+Starting of the code for login-signup form
+
+*/
+
+:before, *:after {
+    box-sizing: border-box;
+}
+
+.register_box{
+    background-color: rgb(50, 50, 50);
+    opacity:.9;
+}
+
+
+.email{
+    border-color: red;
+}
+
+.Login{
+    margin-left: 5vw;
+    background-color:#00bfa5;
+    color:white;
+    margin-top: 10px;
+  
+    }
+
+.login_back{
+    text-align: center;
+    color:white;
+    font-weight: bold;
+}
+
+.input{
+    height:10px;
+    color:white;
+}
+
+.head{
+   margin-bottom:18px; 
+}
+
+
+
+#login_email{
+    color: white;
+    height: 22px;
+    margin-left:26px;
+    font-size: 14px;
+}
+
+.login_email_error_message{
+    color: #eceff1;
+    height:5px;
+    margin-top:-8px;
+    margin-left:15px;
+    font-size:12px;
+}
+
+.login_form_status{
+    color: #eceff1;
+    height:5px;
+    margin-top:5px;
+    margin-left:15px;
+    font-size:12px;
+    text-align: center;
+}
+
+#login_password-field{
+    height: 22px;
+    color:white;
+    margin-left:26px;
+    font-size: 14px;
+}
+
+
+
+#login_password_strength{
+    color: ;
+    height:5px;
+    margin-top:-8px;
+    margin-left:15px;
+    font-size:12px;
+
+}
+
+
+#forgot{
+    float: left;
+    font-size: 13px;
+    color: #00e5ff;
+}
+
+
+
+.login_btn{
+    float:center;
+    border-radius: 30px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+
+}
+
+.or{
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    margin-bottom:15px;
+    margin-top: 15px;
+}
+
+.social{
+    border-radius:20px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+#icon{
+    font-size:18px;
+    color:white;
+}
+
+#email_format{
+    color:red;
+    height:5px;
+    margin-top:-8px;
+    margin-left:15px;
+    font-size:12px;
+}
+
+
+
+#login_show{
+    float: right;
+    text-align: right;
+}
+
+/*
+
+Ending of the code for login-signup form
+
+*/

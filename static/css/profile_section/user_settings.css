@@ -1,0 +1,91 @@
+.account_settings{
+    width: 100%;
+    border: 1px solid rgba(238,238,238 ,1);
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+.setting_option{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.option1{
+    text-align: left;
+    font-weight: 450;
+    font-size: 16px;
+}
+
+.option2{
+    text-align: left;
+    font-size: 16px;
+}
+
+.option3{
+    text-align: right;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.option3:hover{
+    color: blue;
+}
+
+.settings_submit{
+    text-transform: capitalize;
+    color: rgb(17,102,139);
+    font-weight: bold;
+    background-color: white;
+    box-shadow: none;
+    border: 1px solid rgba(200,200,200 ,1);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.settings_submit:hover{
+    background-color: rgba(17,102,139,0.1);
+    box-shadow: none;
+    border: 1px solid rgba(200,200,200 ,1);
+}
+
+.heading_divider{
+    border: 0px solid white;
+    height: 1px;
+    background-color: rgba(238,238,238 ,1);
+}
+
+#user_mobile_edit, #user_gender_edit, #user_dob_edit{
+    display: none;
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    height: 20px;
+    width: 60%;
+    border-radius: 3px;
+    border: 1px solid rgba(200, 200, 200, 1);
+}
+
+#user_name_edit_first{
+    display: none;
+    float: left;
+    width: 40%;
+    margin-right: 5%;
+    border-radius: 3px;
+    border: 1px solid rgba(200, 200, 200, 1);
+    height: 20px;
+    padding: 0px;
+    font-size: 14px;
+}
+
+#user_name_edit_last{
+    display: none;
+    float: left;
+    width: 40%;
+    margin-right: 5%;
+    border-radius: 3px;
+    border: 1px solid rgba(200, 200, 200, 1);
+    height: 20px;
+    padding: 0px;
+    font-size: 14px;
+}

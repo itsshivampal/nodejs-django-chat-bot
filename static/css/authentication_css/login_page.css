@@ -1,0 +1,551 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    height: 100vh;
+}
+
+.logo_name{
+    width: 150px;
+    float: left;
+}
+
+#page_header{
+    text-align: center;
+    padding: 1%;
+    padding-left: 10%;
+    box-shadow: 0px 2px 3px #aaa;
+}
+
+#main_page{
+    margin: 0%;
+    padding: 0%;
+}
+
+.left_login{
+    width: 100%;
+    background-color: #fff; 
+    bottom: 0;
+    float: right;
+    margin: 0%;
+
+}
+.signup_btn{
+    text-align: right; 
+    margin-right: 10%;
+    color: #000; 
+    font-size: 110%;
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+.sign_word{
+    margin-left: 10%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 110%;
+    letter-spacing: 1px;
+}
+
+#login{
+    margin-top: 3%;
+    border: none;
+}
+
+.login_back{
+    text-align: center;
+    color:#000;
+    font-weight: bold;
+}
+
+.input{
+    height:10px;
+    color:#000;
+}
+
+.head{
+   margin-bottom:18px; 
+}
+
+#login_email{
+    color: #000;
+    height: 22px;
+    margin-left: 7%;
+    font-size: 14px;
+    border: none;
+    width: 60%;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid rgba(238,238,238 ,1);
+    outline-color: #06D85F;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.login_email_error_message{
+    color: red;
+    height:5px;
+    margin-top:-8px;
+    font-size:12px;
+    margin-left: 10%;
+}
+
+.login_form_status{
+    color: #eceff1;
+    height:5px;
+    margin-top:5px;
+    margin-left:15px;
+    font-size:12px;
+    text-align: center;
+}
+
+#login_password-field{
+    height: 22px;
+    color:#000;
+    margin-left:7%;
+    font-size: 14px;
+    width: 60%;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid rgba(238,238,238 ,1);
+    outline-color: #06D85F;
+    text-align: left;
+    padding-left: 2%;
+    margin-top: -3%;
+}
+
+#login_password_strength{
+    color: ;
+    height:5px;
+    margin-top:-8px;
+    margin-left:15px;
+    font-size:12px;
+
+}
+
+#forgot{
+    float: right;
+    font-size: 12px;
+    color: #000;
+    margin-right: 30%;
+    margin-top: -3%;
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+#forgot:hover{
+    color: #1e88e5;
+}
+
+.login_btn{
+    height: 40px;
+  font-size: 100%;
+  padding-top: 5%;
+  color:  #fff;
+  background-color: #1e88e5;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.login_btn:hover{
+    color: #fff;
+    background-color: #1e88e5;
+}
+
+#sign_btn0{
+    width: 64%; 
+    float: left; 
+    margin-left: 7%; 
+    margin-top: 0%;
+    padding-top: 2%;
+}
+
+.sign_word_btn{
+    margin-top: 2%;
+}
+
+.sign_word-or{
+    font-size: 105%;
+    margin-left: 8%;
+
+}
+
+.other_sign_word{
+    letter-spacing: 1px;
+
+}
+
+.other_sign_icon{
+    color: #000;
+    font-size: 200%;
+    margin-left: 5%;
+}
+
+#icon{
+    font-size:18px;
+    color: #000;
+}
+
+#email_format{
+    color:red;
+    height:5px;
+    margin-top:-8px;
+    margin-left:15px;
+    font-size:12px;
+}
+
+#login_show{
+    float: right;
+    text-align: right;
+}
+
+.login_email{
+    background-color: #000;
+    border-color: red;
+    color: red;
+}
+
+.about_word{
+    color: #fff;
+    /*margin-left: 20px;*/
+    color: rgba(0,0,0,0.8);
+    margin-right: 10px;
+}
+.career_word{
+    margin-left: 20px; 
+    font-size: 15px; 
+    color: #fff;
+}
+.business_word{
+    margin-left: 20px; 
+    font-size: 15px; 
+    color: #fff;
+}
+.term_word{
+    margin-left: 20px; 
+    font-size: 15px; 
+    color: #fff;
+}
+.privacy_word{
+    margin-left: 20px; 
+    font-size: 15px; 
+    color: #fff;
+}
+.contact_word{
+    margin-left: 20px; 
+    font-size: 15px; 
+    color: #fff
+}
+.footer_item {
+    display: flex;
+}
+
+.footer_item li{
+   margin-left: 5%;
+}
+
+.icon a{
+    margin-left: 2%;
+    font-size: 110%;
+    color: #000;
+}
+  
+.mob_logo_name{
+    width: 40%;
+    float: left;
+}
+
+.login_img{ 
+    width: 600px; 
+    margin-top: 0%; 
+    float: right; 
+}
+ 
+.bold_land{
+    font-size: 200%; 
+    margin-left: 20%;
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+.flow-text{
+    font-size: 170%; 
+    margin-left: 20%;
+    margin-top: -0%;
+    font-family: 'Thasadith', sans-serif;
+}
+
+.mob_signup_btn{
+    text-align: right; 
+    margin-right: 10%;
+    color: #000; 
+    font-size: 110%;
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+    /* Responsive_design  */
+
+
+    /* Start on mobile_device */
+
+@media (max-width: 640px) {
+
+    .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+          color: rgba(0,0,0,0.8);
+        margin-right: 10px;
+    }
+
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+
+    .footer{
+        bottom: 0%;
+        text-align: center;
+    }
+
+    .or{
+        text-align: center;
+        font-size: 120%;
+        color: #000;
+        margin-bottom: 8%;
+        margin-top: 15%;
+    }
+
+    .footer{
+        bottom: 0%;
+        text-align: center;
+    }
+
+    .footer-mob {
+        margin-top: 8%;
+    }
+
+    .left_login{
+        visibility: hidden;
+        display: none;
+    }
+
+    .page-footer {
+        visibility: hidden;
+    }
+
+    #login_password-field{
+       width: 80%;
+    }
+
+    #login_email{
+        width: 80%;
+    }
+
+    #sign_btn0{
+        width: 82%;
+    }
+
+    #forgot{
+        margin-right: 10%;
+    }
+    .sign_word-or{
+        margin-left: 35%;
+
+    }
+    .signup_btn{
+        
+        margin-right: 10%;
+        margin-top: -2%; 
+        
+    }
+
+    #page_header{
+        display: none;
+    }
+
+}
+
+/* end mobile_device*/
+
+
+/* Start on tab_device */
+    
+@media screen and (max-width: 1007px) and (min-width: 641px){
+       
+    .about_word{
+          color: #aaa;
+          margin-left: 50px;
+          margin-top: 20px;
+          color: rgba(0,0,0,0.8);
+            margin-right: 10px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+        margin-right: 5px;
+    }
+    .footer{
+        bottom: -50%;
+        position: absolute; 
+        text-align: center;
+    }
+    #forgot{
+        float: right;
+        font-size: 12px;
+        color: #000;
+        margin-right: 7%;
+        margin-top: -2%;
+        font-family: 'Nunito Sans', sans-serif;
+        letter-spacing: 1px;
+    }
+    .footer{
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+    .page-footer {
+        visibility: hidden;
+      }
+      .left_login{
+        visibility: hidden;
+        display: none;
+      }
+      .page-footer {
+        visibility: hidden;
+      }
+      #login_password-field{
+       width: 80%;
+    }
+    #login_email{
+        width: 80%;
+    }
+    #sign_btn0{
+        width: 82%;
+    }
+    #forgot{
+    margin-right: 10%;
+    }
+    .footer1{
+        visibility: hidden;
+        display: none;
+    }
+
+    #page_header{
+        display: none;
+    }
+
+
+
+     }
+
+
+    /* End on tab_device */
+
+
+    /* Start on large_device */
+
+@media (min-width: 1005px) {
+   .footer-mob{
+        visibility: hidden;
+        display: none;
+      }
+      .footer{
+        visibility: hidden;
+        display: none;
+      }
+      .footer-copyright{
+        display: none;
+        visibility: hidden;
+      }
+
+    .footer1 {
+        position: absolute;
+        right: 0;
+        bottom: 0%;
+        left: 0;
+        font-size: 90%;
+        padding: 0.5rem;
+        padding-left: 10%;
+        background-color: #085b80;
+        text-align: center;
+        background-color: white;
+        box-shadow: 0 -5px 5px -5px rgb(200, 200, 200);
+    }
+
+    .iconsoc{
+        color: #fff;
+        margin-left: 2%;
+        font-size: 110%;
+        color: rgba(0,0,0,0.8);
+    }
+
+    .follow_word{
+        margin-left: 20%;
+        color: #fff;
+        font-size: 115%;
+        color: rgba(0,0,0,0.8);
+        margin-left: 10%;
+        font-weight: 450;
+    }
+    .mob_logo_name{
+        visibility: hidden;
+        display: none;
+    }
+
+    .mob_signup_btn{
+        display: none;
+    }
+
+}

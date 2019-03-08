@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Xpiriance</title>
+
+        <!-- These are fixed css and js files need to include in every page -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../../static/css/materialize.min.css"  media="screen,projection"/>
+        <script type="text/javascript" src="../../static/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../../static/js/materialize.min.js"></script>
+        <script type="text/javascript" src="../../static/js/stickyfill.js"></script>
+        <link rel="stylesheet" href="../../static/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="../../static/css/font-awesome.css"/>
+
+        <link href="../../static/css/croppie.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../../static/js/croppie.min.js"></script>
+
+        
+        <!-- These are required css files used in this page -->
+        <link type="text/css" rel="stylesheet" href="../../static/css/user_post.css">
+        <link type="text/css" rel="stylesheet" href="../../static/css/header.css">
+        <link type="text/css" rel="stylesheet" href="../../static/css/write_section.css">
+        <link type="text/css" rel="stylesheet" href="../../static/css/profile_dashboard.css">
+
+
+        <!-- These are required js files used in this page -->
+
+
+        <!-- These are temporary css and js files which will use for adding temporary changes -->
+        <link type="text/css" rel="stylesheet" href="../../static/css/main.css">
+        <script type="text/javascript" src="../../static/js/main.js"></script>
+
+
+        <style type="text/css">
+            .side_navigation_option{
+                /*height: 40px;*/
+                color: black;
+                padding: 16px;
+                padding-left: 25px;
+                font-size: 17px;
+                /*border-top: 1px solid rgb(200, 200, 200);*/
+                border-bottom: 1px solid rgb(200, 200, 200);
+                font-size: 15px;
+                font-weight: 600;
+                float: center;
+                /*background-color: #00838f;*/
+                /*background-color: white*/
+            }
+
+            .side_navigation_option:hover{
+                background-color: blue;
+            }
+
+            .side_navigation_bar {
+                height: 100vh;
+                width: 20%;
+                /*position: fixed;*/
+                z-index: -1;
+                /*top: 0;*/
+                /*left: 0;*/
+                /*bottom: 0;*/
+                /*background-color: rgb(0, 148, 160);*/
+                /*background-color: white;*/
+                overflow-x: hidden;
+                padding-top: 20px;
+                padding-top: 40px;
+                margin: 0px;
+                margin-bottom: -20px;
+            }
+
+            .user_full_name{
+                font-size: 60px;
+                font-family: serif;
+                font-weight: 500;
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+            }
+
+            .user_short_intro{
+                font-size: 20px;
+                margin-top: 0px;
+                padding-top: 0px;
+            }
+        </style>
+
+
+
+        
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.materialboxed').materialbox();
+            });
+        </script>
+
+
+    </head>
+    <body>
+
+       <div class="row">
+            
+            <div class="col s12 header_section" id="no_padding_margin">
+
+                <div class="col s3" id="no_padding_margin">
+                    <div class="col s12" style="padding: 0px;">
+                        <div class="logo_space card-panel">
+                            <span class="logo_name">Xpiriance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s6" id="no_padding_margin">
+                    <div id="search_box">
+                        <div class="col s12" style="margin: 0px; padding: 0px;"">
+                            <input class="search" type="search" placeholder="Search for people, group and questions....." id="search">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s3" id="no_padding_margin">
+                    <div class="col s12" style="padding: 0px;">
+                        <div class="right_header card-panel">
+                            <img src="../../static/images/image1.jpg" class="user_iamge">
+                            <i class="fa fa-user" aria-hidden="true" id="header_icons"></i>
+                            <i class="fa fa-envelope" aria-hidden="true" id="header_icons"></i>
+                            <i class="fa fa-bell" aria-hidden="true" id="header_icons"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="" style="width: 96%; margin-left: 2%; margin-bottom: 0px;">
+
+                <div class="col s12" id="user_dashboard">
+
+                    <div class=""  style="width: 20%; float: left; margin-left: 1%">
+                        <div class="col s12" id="no_padding_margin">
+                            <div class="card">
+                                <div class="card-image card_image">
+                                    <img class="materialboxed user_profile_image" src=" " id="user_profile_image">
+                                    <button class="update" id="update_profile">Update</i></button>
+                                </div>
+                                <div class="card-content" id="card_content">
+                                    <span class="card-title" id="user_name"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="profile_modal" class="profile_modal">
+                        <div class="profile-modal-content">
+                            <input type="file" id="upload_profile" value="Choose a file">
+
+                            <span class="close">&times;</span>
+
+                            <div id="upload-demo"></div>
+                            <input type="hidden" id="imagebase64" name="imagebase64">
+
+                            <input name="submit" type="submit" value="Save it!" class="send_profile" />
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="" style="width: 76%; float: left; margin-left: 2%;">
+
+                    <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image1">
+                            <div class="overlay"></div>
+                            <button class="update" id="update1"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image2">
+                            <div class="overlay"></div>
+                            <button class="update" id="update2"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                        <div class="dashboard-image">
+                            <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image3">
+                            <div class="overlay"></div>
+                            <button class="update" id="update3"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                    </div>
+
+
+                    <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image4">
+                            <div class="overlay"></div>
+                            <button class="update" id="update4"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image5">
+                            <div class="overlay"></div>
+                            <button class="update" id="update5"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                        <div class="dashboard-image">
+                            <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image6">
+                            <div class="overlay"></div>
+                            <button class="update" id="update6"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                    </div>
+
+                    <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image7">
+                            <div class="overlay"></div>
+                            <button class="update" id="update7"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image8">
+                            <div class="overlay"></div>
+                            <button class="update" id="update8"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                        <div class="dashboard-image">
+                            <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image9">
+                            <div class="overlay"></div>
+                            <button class="update" id="update9"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                    </div>
+
+                    <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image10">
+                            <div class="overlay"></div>
+                            <button class="update" id="update10"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image11">
+                            <div class="overlay"></div>
+                            <button class="update" id="update11"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                        <div class="dashboard-image">
+                            <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image12">
+                            <div class="overlay"></div>
+                            <button class="update" id="update12"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                    </div>
+
+                    <div class="" id="no_padding_margin" style="width: 20%; float: left">
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image13">
+                            <div class="overlay"></div>
+                            <button class="update" id="update13"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+
+                        <div class="dashboard-image">
+                            <img src=" " width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image14">
+                            <div class="overlay"></div>
+                            <button class="update" id="update14"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                        <div class="dashboard-image">
+                            <img src="" width="100%" class="materialboxed dash-image" data-caption="A picture of a way with a group of trees in a park" id="dashboard_image15">
+                            <div class="overlay"></div>
+                            <button class="update" id="update15"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            <!-- <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </div>
+
+                    </div>
+
+                    <div id="dashboard_modal" class="dashboard_modal">
+                        <input type="text" id="dashboard_no" hidden="true" value="">
+                        <div class="dashboard-modal-content">
+                            <input type="file" id="upload_dashboard" value="Choose a file">
+                            <span class="close_dash_modal">&times;</span>
+                            <div id="upload-dashboard-demo"></div>
+                            <input type="hidden" id="dashboard_imagebase64" name="imagebase64">
+                            <input name="submit" type="submit" value="Save it!" class="send_dashboard" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col s12" id="user_introduction">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+            </div>
+
+            <div class="col s12" id="no_padding_margin">
+
+
+                <div class="side_navigation_bar" style="float: left;">
+ 
+                    <a href="" style="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-file-text" aria-hidden="true" style=""></i>&nbsp; &nbsp; &nbsp; Timeline</span>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-users" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; About You</span>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-user" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; Following</span>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; Followed</span>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-cog" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; Settings</span>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div id="user_follow_members" style="width: 78%; float: left; margin-left: 2%; background-color: white; min-height: 100vh; margin-top: 30px;">
+
+                    <div class="col s8 offset-s2" style="margin-top: 50px;">
+                        <span class="user_full_name" id="user_full_name">Shivam Pal</span><br>
+                        <span class="user_short_intro" id="user_short_intro">Entrepreneur | IITian | Coder | Philosopher</span>
+                        <br>
+
+                        <span>Occupation : </span>
+                        <span>Student</span>
+                        <br>
+
+                        <span>Date of Birth : </span>
+                        <span>August 12, 1996</span>
+                        <br>
+
+                        <span>Gender : </span>
+                        <span>Male</span>
+                        <br>
+
+                        <span>Website link : </span>
+                        <span>http://itsshivam.github.io</span>
+                        <br>
+
+                        <span>Bio : </span>
+                        <span>Lorem ipsum dolor sit amet</span>
+
+
+
+                    </div>
+
+                        
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+        <script type="text/javascript" src="../../static/js/profile_dashboard.js"></script>
+        <script type="text/javascript">get_user_profile_data();</script>
+        <script type="text/javascript" src="../../static/js/user_post.js"></script>
+        <script type="text/javascript" src="../../static/js/search_box.js"></script>
+        
+
+
+    </body>
+ </html>

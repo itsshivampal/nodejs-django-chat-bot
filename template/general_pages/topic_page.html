@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Xpiriance</title>
+
+        <!-- These are fixed css and js files need to include in every page -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css"  media="screen,projection"/>
+        <script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../static/js/materialize.min.js"></script>
+        <script type="text/javascript" src="../static/js/stickyfill.js"></script>
+        <link rel="stylesheet" href="../static/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="../static/css/font-awesome.css"/>
+
+        
+        <!-- These are required css files used in this page -->
+        <link type="text/css" rel="stylesheet" href="../static/css/header.css">
+        <!-- <link type="text/css" rel="stylesheet" href="../static/css/profile_dashboard.css"> -->
+
+
+        <style type="text/css">
+
+            body{
+                background-color: rgba(232,245,233,0.6);
+            }
+
+        	#no_padding_margin{
+        		margin: 0px;
+        		padding: 0px;
+        	}
+
+        	#search_box{
+				padding: 20px;
+				padding-top: 23px;
+				padding-bottom: 60px;
+				width: 100%;
+				height: 60px;
+				/*background-color: rgba(255,150,0,0);*/
+			}
+
+
+			#search{
+				font-size: 14px;
+			    color: #424242;
+			    height: 36px;
+			    padding-left: 3%;
+			    border-radius: 20px 20px;
+			    border: 0.2em solid #757575;
+			    background-color: #fbe9e7;
+			    width: 97%;
+			    box-shadow: 1px 1px 0px #757575;
+			}
+
+            .group_image{
+                 width: 100vw;
+                 margin: 0px;
+                 box-shadow: 0px 1px 5px black;
+            }
+
+            #user_introduction{
+                background-color: white;
+                margin-top: 8px;
+                box-shadow: 0px 1px 3px #757575;
+                text-align: center;
+                font-size: 16px;
+                /*padding-right: 18%;*/
+                /*padding-left: 18%;*/
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-weight: 450;
+                color: #455a64;
+            }
+
+            .follow_button{
+                background-color: rgb(0, 148, 160);
+                border-radius: 20px;
+                text-transform: capitalize;
+                font-size: 15px;
+                padding-right: 30px;
+                padding-left: 30px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+
+            }
+
+            .follow_button:hover{
+                background-color: rgba(0, 148, 160, 0.8);
+            }
+
+            .side_navigation_option{
+                /*height: 40px;*/
+                color: black;
+                padding: 16px;
+                padding-left: 25px;
+                font-size: 17px;
+                /*border-top: 1px solid rgb(200, 200, 200);*/
+                /*border-bottom: 1px solid rgb(200, 200, 200);*/
+                font-size: 15px;
+                font-weight: 600;
+                float: center;
+                margin-left: 5%;
+                /*background-color: #00838f;*/
+                /*background-color: white*/
+            }
+
+            .side_navigation_option:hover{
+                background-color: white;
+                border-radius: 2px;
+            }
+
+            .side_navigation_bar {
+                height: 100vh;
+                width: 18%;
+                /*position: fixed;*/
+                z-index: -1;
+                /*top: 0;*/
+                /*left: 0;*/
+                /*bottom: 0;*/
+                /*background-color: rgb(0, 148, 160);*/
+                /*background-color: white;*/
+                overflow-x: hidden;
+                padding-top: 20px;
+                padding-top: 40px;
+                margin: 0px;
+                margin-bottom: -20px;
+            }
+
+            .write_button{
+                margin-top: 20px;
+            }
+
+
+            /*.button_text{
+                font-size: 10px;
+                color: black;
+
+            }*/
+
+
+        </style>
+
+    </head>
+    <body>
+
+    	<div class="row">
+
+    		<div class="col s12 header_section" id="no_padding_margin" style="z-index: 100; position: relative; position: fixed;">
+
+                <div class="col s3" id="no_padding_margin">
+                    <div class="col s12" style="padding: 0px;">
+                        <div class="logo_space card-panel">
+                            <span class="logo_name">Xpiriance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s6" id="no_padding_margin">
+                    <div id="search_box">
+                        <div class="col s12" style="margin: 0px; padding: 0px;"">
+                            <input class="search" type="search" placeholder="Search for people, group and questions....." id="search">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s3" id="no_padding_margin">
+                    <div class="col s12" style="padding: 0px;">
+                        <div class="right_header card-panel">
+                            <img src="../static/images/image1.jpg" class="user_iamge">
+                            <i class="fa fa-user" aria-hidden="true" id="header_icons"></i>
+                            <i class="fa fa-envelope" aria-hidden="true" id="header_icons"></i>
+                            <i class="fa fa-bell" aria-hidden="true" id="header_icons"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col s12" style="margin: 0px; padding: 0px;">
+
+            	<img src="../static/images/group_image.png" class="group_image">
+            	
+            </div>
+
+            <div class="col s12" id="user_introduction">
+                <div class="col s8 offset-s2">
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span>
+                </div>
+                <div class="col s2">
+                    <button class="btn follow_button">Follow</button>
+                </div>
+            </div>
+
+            <div class="col s12" id="no_padding_margin" style="padding-left: 20px; padding-right: 20px;">
+
+
+                <div class="side_navigation_bar" style="float: left;">
+ 
+                    <a href="" style="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-file-text" aria-hidden="true" style=""></i>&nbsp; &nbsp; &nbsp; Experiences</span>
+                        </div>
+                    </a>
+                    <a href="" style="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-file-text" aria-hidden="true" style=""></i>&nbsp; &nbsp; &nbsp; Answers</span>
+                        </div>
+                    </a>
+                    <a href="" style="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-file-text" aria-hidden="true" style=""></i>&nbsp; &nbsp; &nbsp; Questions</span>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-users" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; About Group</span>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="side_navigation_option">
+                            <span><i class="fa fa-user" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; Followers</span>
+                        </div>
+                    </a>
+
+                </div>
+
+
+
+                <!-- I need to write code in following sections -->
+
+
+                <div id="user_timeline_posts" style="width: 50%; float: left; margin-left: 2%; background-color: white; min-height: 100vh; margin-top: 30px;">
+
+
+                                      
+                </div>
+
+
+
+                <div id="user_timeline_posts" style="width: 26%; float: left; margin-left: 2%; background-color: white; min-height: 100vh; margin-top: 30px; text-align: center;">
+
+                    <button class="btn write_button">Write Experience</button>
+                    
+                </div>
+
+            </div>
+
+
+    	</div>
+
+
+    </body>
+ </html>

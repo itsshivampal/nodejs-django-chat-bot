@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xpiriance</title>
+
+    <!-- These are fixed css and js files need to include in every page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="static/lib/css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="static/lib/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="static/lib/js/materialize.min.js"></script>
+    <script type="text/javascript" src="static/lib/js/stickyfill.js"></script>
+    <link rel="stylesheet" href="static/lib/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="static/lib/css/font-awesome.css"/>
+
+    
+    <!-- These are required css files used in this page -->
+    <link href="https://cdn.quilljs.com/1.3.5/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/lib/quill_editor/quill-emoji.css">
+    <script src="https://cdn.quilljs.com/1.3.5/quill.js"></script>
+    <script type="text/javascript" src="static/lib/quill_editor/quill-emoji.js"></script>
+    <script type="text/javascript" src="static/lib/quill_editor/quill_editor_url.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    
+    <!-- These are required js files used in this page -->
+    <script type="text/javascript" src="static/js/general_js/header.js"></script>
+    <script type="text/javascript" src="static/js/post_section_js/experience_text_editor.js"></script>
+    <script type="text/javascript" src="static/js/post_section_js/discussion_text_editior.js"></script>
+    <!-- <script type="text/javascript" src="static/js/post_section_js/retrieve_experience.js"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="static/css/general_css/header.css">
+    <link type="text/css" rel="stylesheet" href="static/css/post_section/text_editor_section.css">
+    <link type="text/css" rel="stylesheet" href="static/css/post_section/user_post.css">
+    <link type="text/css" rel="stylesheet" href="static/css/post_section/experience_post.css">
+
+
+
+    <style type="text/css">
+        
+        .home_content{
+            margin-top: 90px;
+            width: 100%;
+        }
+
+        .first_section{
+            width: 45%;
+            margin-left: 8%;
+            float: left;
+            text-align: justify;
+        }
+
+        .second_section{
+            width: 35%;
+            margin-left: 4%;
+            float: left;
+            text-align: justify;
+        }
+
+        .reply{
+            visibility: hidden;
+        }
+
+        .reply_secondary_input{
+            display: none;
+        }
+
+        .icons{
+            cursor: pointer;
+        }
+
+        .parent_comment{
+            color: #37474f;
+        }
+
+    </style>
+
+    
+
+
+
+</head>
+<body>
+
+    <div class="row no_padding_margin">
+
+
+
+
+        <div class="col s12 header_section" id="no_padding_margin">
+
+            <!-- Following is a header section of this page
+            Its CSS file, you will get at general_css/header.css
+            Its JS file, you will get at general_js/header.js -->
+
+            <div class="col s3" id="no_padding_margin">
+                <div class="col s12">
+                    <a href="/"><img src="static/images/xpiriance_logo.png" class="logo_name"></a>
+                </div>
+            </div>
+
+            <div class="col s5" id="no_padding_margin">
+                <div id="search_box">
+                    <input type="search" placeholder="Search" id="search">
+                </div>
+            </div>
+
+            <div class="col s4" id="no_padding_margin">
+                <div class="right_header">
+
+                    <div class="">
+                        <a href="" id="user_notifications"><i class="fa fa-bell" aria-hidden="true" id="header_icons"></i></a>
+                        <a href="" id="user_messages"><i class="fa fa-comments" aria-hidden="true" id="header_icons"></i></a>
+                    </div>
+
+                    <div class="">
+
+                        <a href="" id="user_profile"><img id="user_image" src="" class="user_image"></a>
+
+                        <a class='dropdown-trigger' id="dropdown_button" data-target='dropdown_option' data-activates="dropdown_option" data-beloworigin="true">
+                            <span style="margin-right: 5px;" id="user_name"></span>
+                            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                        </a>
+
+                        <ul id='dropdown_option' class='dropdown-content'>
+                            <li><a href="" id="user_profile_link">Profile</a></li>
+                            <li><a href="" id="user_settings"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
+                            <li><a href="" id="user_bookmark"><i class="fa fa-bookmark" aria-hidden="true"></i>Bookmarks</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="/logout/"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+
+        <div class="col s12 home_content">
+
+            <div class="first_section">
+                
+               <div class="col s12">
+
+                    <div class="experience_write" style="margin: 0px; width: 100%;">
+
+                        <div class="card-panel row" style="padding: 15px; cursor: pointer;"  id="create_experience_post">
+                            <div class="row valign-wrapper" style="margin: 0px;">
+                                <div class="col s2">
+                                    <img id="user_image" src="static/images/image1.jpg" alt="" class="circle responsive-img user_exp_image">
+                                </div>
+                                <div class="col s10">
+                                    <span class="share_experience_text">
+                                        Share your experience with world....
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="experience_modal" class="editor_modal">
+                            <div class="editor_modal-content">
+                                <div class="post_modal_close" id="exp_close">
+                                    <span class="close_now">&times;</span>
+                                </div>
+                                <div style="width: 100%;">
+                                    <textarea class="materialize-textarea" class="experience_title" id="experience_title" placeholder="Write Experience Title"></textarea>
+                                    <div>
+                                        <div id="experience">
+                                        </div>
+                                    </div>
+                                    <div class="Select_topic">
+                                        <div id="experience_tags" class="chips chips-autocomplete post_tags">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer1">
+                                    <b class="anonymous">Anonymous</b>
+                                    <div class="switch">
+                                        <label>No
+                                            <input type="checkbox" class="experience_annonymous">
+                                            <span class="lever"></span>Yes
+                                        </label>
+                                    </div>
+                                    <div class="edit_btn btn" id="experience_post">Post</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="user_timeline" id="user_timeline">
+
+
+                        <!-- <div class="card-panel row" id="card_panel" class="experience-post-group" style="padding: 0px;">
+                    
+                            <div class="col s12">
+
+                                <div>
+                                    <div class="post-tags">
+                                        <div class="chip no_chip">Related Tags : </div>
+                                        <div class="chip">Happiness</div>
+                                        <div class="chip">Love</div>
+                                        <div class="chip">Joy</div>                                    
+                                    </div>
+                                </div>
+
+                                <div class="post-user-details-section">
+                                    <div class="post-user-image-section">
+                                        <a href=""><img class="responsive-img post-user-image" src="static/images/image1.jpg"></a>
+                                    </div>
+                                    <div class="post-user-intro-section">
+                                        <a href=""><p class="post-user-name"> Shivam Pal</p></a>
+                                        <p class="post-user-details"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Student at IIT Kanpur</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <div class="row col s12 post-section" style="margin-bottom: 6px;">
+                                <p class="experience-intro">Consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                                <p class="experience-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo lorem ipsum dolor sit amet lorem ipsum dolor sit <a href="">  see more....</a></p>
+
+                                <img class="responsive-img" src="static/images/post_temp_image.jpg" style="margin-top: 10px;">
+
+
+
+                                <div class="col s12 iconslist" style="padding: 3px;">
+
+                                    <div class="col s4" style="text-align: center;">
+                                        <a href="">
+                                            <span class="icons">
+                                                <i class="fa fa-thumbs-up" aria-hidden="true" style="font-size: 17px;"></i> Helpful &nbsp;<span class="icon_numbers">34</span>
+                                            </span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col s4" style="text-align: center;">
+                                        <a href="">
+                                            <span class="icons">
+                                                <i class="fa fa-comment" aria-hidden="true" style="font-size: 17px;"></i> Comment &nbsp;<span class="icon_numbers">12</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="col s4" style="text-align: right;">
+                                        <a href="">
+                                            <span class="icons">
+                                                
+                                                <i class="fa fa-share" aria-hidden="true" style="font-size: 20px; margin-right: 50px;"></i>
+                                                <i class="fa fa-bookmark-o" aria-hidden="true" style="font-size: 20px;"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s12 comment_section">
+
+
+                                <div class="new_comment" id="parent_1">
+
+                                    <div class="primary_comment">
+                                        <span class="parent_comment">
+                                            <b class="username">Vikram Singh Gurjar </b> &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+                                        </span>
+                                        <span class="reply" onclick="id_calculation()"><i class="material-icons reply_icon">reply</i></span>
+                                    </div>
+
+                                    <div class="reply_comment">
+
+                                        <div class="secondary_comment" id="child_1">
+                                            <span class="child_comment">
+                                                <b class="username">Vikram Singh Gurjar </b> &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            </span>
+                                            <span class="reply" onclick="id_calculation()"><i class="material-icons reply_icon">reply</i></span>
+                                        </div>
+
+                                        <div class="secondary_comment" id="child_2">
+                                            <span class="child_comment">
+                                                <b class="username">Vikram Singh Gurjar </b> &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            </span>
+                                            <span class="reply" onclick="id_calculation()"><i class="material-icons reply_icon">reply</i></span>
+                                        </div>
+
+                                        <div class="reply_secondary_input" id="reply_1">
+                                            <input type="" class="reply_comment_input" placeholder="Please write your comment here" name="">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="new_comment" id="parent_2">
+
+                                    <div class="primary_comment">
+                                        <span class="parent_comment">
+                                            <b class="username">Vikram Singh Gurjar </b> &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+                                        </span>
+                                        <span class="reply"><i class="material-icons reply_icon">reply</i></span>
+                                    </div>
+
+                                    <div class="reply_comment">
+
+                                        <div class="secondary_comment" id="child_3">
+                                            <span class="child_comment">
+                                                <b class="username">Vikram Singh Gurjar </b> &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            </span>
+                                            <span class="reply"><i class="material-icons reply_icon">reply</i></span>
+                                        </div>
+
+                                        <div class="secondary_comment" id="child_4">
+                                            <span class="child_comment">
+                                                <b class="username">Vikram Singh Gurjar </b> &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            </span>
+                                            <span class="reply"><i class="material-icons reply_icon">reply</i></span>
+                                        </div>
+
+                                        <div class="reply_secondary_input" id="reply_2">
+                                            <input type="" class="reply_comment_input" placeholder="Please write your comment here" name="">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="col s12">
+                                <span class="load_more_comment">Load more comment...</span>
+                                <div class="user_write_comment">
+                                    <input type="" class="write_comment" placeholder="Write your comments on this post..." name="">
+                                </div>
+                            </div>
+
+                        </div> -->
+
+
+
+                        <!-- <div class="card-panel row" id="card_panel" class="question-post-group">
+                        
+                            <div class="col s12">
+
+                                <div>
+                                    <div class="post-tags">
+                                        <div class="chip no_chip">Related Tags : </div>
+                                        <div class="chip">Happiness</div>
+                                        <div class="chip">Love</div>
+                                        <div class="chip">Joy</div>                                    
+                                    </div>
+                                </div>
+
+                                <div class="post-user-details-section">
+                                    <div class="post-user-image-section">
+                                        <img class="responsive-img post-user-image" src="static/images/image1.jpg">
+                                    </div>
+                                    <div class="post-user-intro-section">
+                                        <p class="post-user-name"> Shivam Pal</p>
+                                        <p class="post-user-details"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Student at IIT Kanpur</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <div class="row col s12 post-section">
+                                <p class="question-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit, sed do?</p>
+
+                                <div class="col s12 answer-section">
+
+                                    <div class="answer-user-details-section">
+                                        <div class="answer-user-image-section">
+                                            <img class="responsive-img answer-user-image"  src="static/images/image3.jpg" alt="User_name">
+                                        </div>
+                                        <div class="answer-user-intro-section">
+                                            <p class="answer-user-name"> Braj Bhushan</p>
+                                            <p class="answer-user-details"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Student at IIT Kanpur</p>
+                                        </div>
+                                    </div>
+
+
+                                    <p class="answer-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo lorem ipsum dolor sit amet, commodo lorem <a href="">  see more....</a></p>
+
+                                    <img class="responsive-img" src="static/images/post_temp_image.jpg" style="margin-top: 10px;">
+
+                                    <div class="col s12 iconslist" style="padding: 3px;">
+                                        <div class="col s4" style="text-align: center;">
+                                            <span class="icons">
+                                                <i class="fa fa-comment" aria-hidden="true"></i> Comment &nbsp;<span class="icon_numbers">12</span>
+                                            </span>
+                                        </div>
+                                        <div class="col s4" style="text-align: center;">
+                                            <span class="icons">
+                                                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Agree &nbsp;<span class="icon_numbers">34</span>
+                                            </span>
+                                        </div>
+                                        <div class="col s4" style="text-align: center;">
+                                            <span class="icons">
+                                                <i class="fa fa-thumbs-down" aria-hidden="true"></i> Disagree &nbsp;<span class="icon_numbers">5</span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col s12 comment_section">
+
+
+                                    <div class="new_comment" id="parent_1">
+
+                                        <div class="primary_comment">
+                                            <span class="parent_comment">
+                                                <b class="username">Vikram Singh Gurjar </b> &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+                                            </span>
+                                            <span class="reply" onclick="id_calculation()"><i class="material-icons reply_icon">reply</i></span>
+                                        </div>
+
+                                        <div class="reply_comment">
+
+                                            <div class="secondary_comment" id="child_1">
+                                                <span class="child_comment">
+                                                    <b class="username">Vikram Singh Gurjar </b> &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                </span>
+                                                <span class="reply" onclick="id_calculation()"><i class="material-icons reply_icon">reply</i></span>
+                                            </div>
+
+                                            <div class="reply_secondary_input" id="reply_1">
+                                                <input type="" class="reply_comment_input" placeholder="Please write your comment here" name="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="col s12">
+                                    <span class="load_more_comment">Load more comment...</span>
+                                    <div class="user_write_comment">
+                                        <input type="" class="write_comment" placeholder="Write your comments on this post..." name="">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> -->
+
+
+
+
+                        
+                    </div>
+
+
+
+                    
+                </div>
+
+            </div>
+
+            <div class="second_section">
+
+                <div class="col s12">
+
+                    <div class="card white">
+                        <div class="card-content black-text">
+                            <span class="card-title" style="font-weight: 500;">Have a Problem?</span>
+                            <p>Discuss any type of problem here!!</p>
+                        </div>
+                        <div class="card-action" id="ask_problem" style="text-align: center;">
+                            <span href="" style="text-transform: capitalize; cursor: pointer;">Ask Here</span>
+                        </div>
+                    </div>
+
+
+                    <div id="issue_modal" class="editor_modal">
+                        <div class="editor_modal-content">
+                            <div class="post_modal_close" id="issue_close">
+                                <span class="close_now">&times;</span>
+                            </div>
+                            <div style="width: 100%;">
+                                <p class="discussion_title">Ask your problem</p>
+
+                                <div id="issue">
+
+                                </div>
+
+                                <div class="Select_topic">
+                                    <div id="issue_tags" class="chips chips-autocomplete post_tags">
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="footer1">
+                                <b class="anonymous">Anonymous</b>
+                                <div class="switch">
+                                    <label>No
+                                        <input type="checkbox" class="issue_annonymous">
+                                        <span class="lever"></span>Yes
+                                    </label>
+                                </div>
+                                <div class="edit_btn btn" id="issue_post">Post</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+   
+    <script type="text/javascript">get_header_data();</script>
+
+
+
+
+<script type="text/javascript">
+    
+
+
+function user_experience(post){
+
+    var experience_format = [
+        '<div class="card-panel row" id="card_panel" class="experience-post-group" id="user_'+post.user_profile_id+'exp_'+post.experience_id+'">',
+            '<div class="col s12">',
+                '<div>',
+                    '<div class="post-tags">',
+                        '<div class="chip no_chip">Related Tags : </div>',
+    ].join("\n");
+
+    var no_of_tags = Object.keys(post.exp_tags).length;
+
+    for(var i = 0; i < no_of_tags; i++){
+        experience_format += [
+            '<a href="http://127.0.0.1:8000/title-' + post.exp_tags[i] +'" class="chip">'+ post.exp_tags[i] +'</a>',
+        ]
+    }
+    
+    experience_format += [                                   
+                        '</div>',
+                    '</div>',
+                    '<div class="post-user-details-section">',
+                        '<div class="post-user-image-section">',
+                            '<a href="http://127.0.0.1:8000/user-' + post.user_profile_id +'"><img class="responsive-img post-user-image" src="'+ post.user_profile_image +'"></a>',
+                        '</div>',
+                        '<div class="post-user-intro-section">',
+                            '<a href="http://127.0.0.1:8000/user-' + post.user_profile_id +'"><p class="post-user-name">'+ post.user_profile_name +'</p></a>',
+                            '<p class="post-user-details"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> '+ post.user_profile_intro +'</p>',
+                        '</div>',
+                    '</div>',
+                '</div>',
+                '<div class="row col s12 post-section">',
+    ].join("\n");
+    
+    experience_format += [
+    // This section is specifically for adding text
+        '<p class="experience-intro">'+ post.exp_title +'</p>',
+        '<div class="experience-text" id="show_more_exp_'+ post.experience_id +'">',
+            '<div>'+ post.exp_preview_content +'<a id = "see_less_exp_'+ post.experience_id +'" onclick = show_more_exp_content(see_less_exp_'+ post.experience_id +')> see more....</a></div>',
+            '<img class="responsive-img" src="'+ post.exp_preview_link +'" style="margin-top: 10px;">',
+        '</div>',
+    ].join("\n");
+
+
+    experience_format += [
+        // This section is for updating reviews
+                    '<div class="col s12 iconslist" style="padding: 3px;">',
+                        '<div class="col s4" style="text-align: center;">',
+                            '<span class="icons review_exp_'+post.experience_id+'" id="current_review_'+post.experience_id+'"  onclick = send_update_current_experience_review("current_exp_review_'+post.experience_id+'")>',
+                                '<i class="fa fa-thumbs-up" aria-hidden="true" style="font-size: 17px;"></i> Helpful &nbsp;<span class="icon_numbers" id="userful_'+post.experience_id+'">'+post.exp_review_count+'</span>',
+                            '</span>',
+                        '</div>',
+
+                        '<div class="col s4" style="text-align: center;">',
+                            '<span class="icons">',
+                                '<i class="fa fa-comment" aria-hidden="true" style="font-size: 17px;"></i> Comment &nbsp;<span class="icon_numbers">'+post.no_of_comments+'</span>',
+                            '</span>',
+                        '</div>',
+                        '<div class="col s4" style="text-align: right;">',
+                            '<span class="icons">',
+                                '<i class="fa fa-share" aria-hidden="true" style="font-size: 20px; margin-right: 50px;"></i>',
+                                '<i class="fa fa-bookmark-o" aria-hidden="true" style="font-size: 20px;"></i></span>',
+                            '</span>',
+                        '</div>',
+                    '</div>',
+                '</div>',
+
+    ].join("\n");
+
+    var no_parent_comment =Object.keys(post.experience_comments).length;
+    if(no_parent_comment>0){
+        experience_format+=[
+                    '<div class="col s12 comment_section" id="comment_section_'+post.experience_id+'">',
+        ].join("\n");
+        
+        for (y in post.experience_comments){
+            experience_format+=[
+                        '<div class="new_comment" id="parent_'+post.experience_comments[y].parent_comment.comment_id+'">',
+                            '<div class="primary_comment" onmouseenter=on_hover_id_calculation(primary_reply_'+post.experience_comments[y].parent_comment.comment_id+') onmouseleave=off_hover_id_calculation(primary_reply_'+post.experience_comments[y].parent_comment.comment_id+')>',
+                                '<span class="parent_comment" id="primary_'+ post.experience_comments[y].parent_comment.comment_id +' "><b class="username"><a href="http://127.0.0.1:8000/user-'+post.experience_comments[y].parent_comment.user_name+'" style="color: #37474f;">'+post.experience_comments[y].parent_comment.name+' </a>&nbsp;</b>'+post.experience_comments[y].parent_comment.content+'</span>',
+                                '<span class="reply" onclick="id_calculation(primary_reply_'+post.experience_comments[y].parent_comment.comment_id+')" id="primary_reply_'+post.experience_comments[y].parent_comment.comment_id+'"><i class="material-icons reply_icon">reply</i></span>',
+                            '</div>', 
+            ].join("\n");
+
+            experience_format +=[
+                            '<div class="reply_comment" id="reply_comment_'+post.experience_comments[y].parent_comment.comment_id+' ">',
+            ].join("\n");
+            
+            for(x in post.experience_comments[y].children_comment){
+                experience_format+=[
+                                '<div class="secondary_comment" onmouseenter="on_hover_id_calculation(parent_'+post.experience_comments[y].parent_comment.comment_id+'secondary_reply_'+post.experience_comments[y].children_comment[x].comment_id+')" onmouseleave="off_hover_id_calculation(parent_'+post.experience_comments[y].parent_comment.comment_id+'secondary_reply_'+post.experience_comments[y].children_comment[x].comment_id+')">',
+                                    '<span class="child_comment" id="parent_'+post.experience_comments[y].parent_comment.comment_id+'secondary_'+ post.experience_comments[y].children_comment[x].comment_id +'"><b class="username"><a href="http://127.0.0.1:8000/user-'+post.experience_comments[y].children_comment[x].user_name+'" style="color: #37474f;">'+post.experience_comments[y].children_comment[x].name+' </a>&nbsp;</b>'+post.experience_comments[y].children_comment[x].content+'</span>',
+                                    '<span class="reply" onclick="id_calculation(parent_'+post.experience_comments[y].parent_comment.comment_id+'secondary_reply_'+post.experience_comments[y].children_comment[x].comment_id+')" id="parent_'+post.experience_comments[y].parent_comment.comment_id+'secondary_reply_'+post.experience_comments[y].children_comment[x].comment_id+'"><i class="material-icons reply_icon">reply</i></span>',
+                                '</div>',
+                ].join("\n");
+            }
+            
+            experience_format+=[
+                                '<div class="reply_secondary_input" id="write_comment_parent_'+post.experience_comments[y].parent_comment.comment_id+'">',
+                                    '<input type="text" class="reply_comment_input" style="width: 95%; border-radius: 14px; height: 28px; padding-left: 14px; border: 1px solid rgba(100,100,100,0.5);" placeholder="Please write your comment here" name="">',
+                                '</div>',
+                            '</div>',
+                        '</div>'
+            ].join("\n");
+        }
+
+        experience_format+=[
+                    '</div>'
+        ].join("\n");
+    }
+    experience_format +=[
+                    '<div class="col s12">',
+                        '<div class="user_write_comment" id="user_write_comment_'+post.experience_id+'" onclick="write_new_comment('+post.experience_id+')">',
+                            '<input type="" class="write_comment" placeholder="Write your comments on this post..." name="">',
+                        '</div>',
+                    '</div>',
+                '</div>',
+
+    ].join("\n");
+
+
+    $("#user_timeline").append(experience_format); // this statement needs to be remove later
+
+    if(post.current_exp_review){
+        $('.review_exp_'+post.experience_id).css("color","blue");
+    }
+
+    last_review = post.current_exp_review;
+
+} // this statememt needs to be remove later
+
+
+
+
+
+function on_hover_id_calculation(id){
+    $(id).css({"visibility":"visible"});
+}
+
+function off_hover_id_calculation(id){
+    $(id).css({"visibility":"hidden"});
+}
+
+function new_work(id){
+    $(id).css({"display" :"block"})
+}
+
+
+var last_review;
+
+function send_update_current_experience_review(exp_id){
+    exp_id = exp_id.split("_")[3];
+    if(!last_review){
+        $.ajax({
+            url :  'http://127.0.0.1:8000/post/create_user_experience_review/',
+            type : "POST",
+            data : {
+                exp_id: exp_id,
+                csrfmiddlewaretoken : csrftoken,
+            },
+            success : function(json) {
+                document.getElementById("userful_"+exp_id).innerHTML = json.exp_review_count+1;
+                last_review = true;
+                $('.review_exp_'+exp_id).css("color","blue");
+                console.log(last_review);
+
+            },
+            error : function(xhr,errmsg,err) {
+                console.log(xhr.status + ": " + xhr.responseText);
+            }
+        });
+    }
+    
+    else{
+        $.ajax({
+            url :  'http://127.0.0.1:8000/post/delete_user_experience_review/',
+            type : "POST",
+            data : {
+                exp_id: exp_id,
+                csrfmiddlewaretoken : csrftoken,
+            },
+            success : function(json) {
+                document.getElementById("userful_"+exp_id).innerHTML =json.exp_review_count-1;
+                $('.review_exp_'+exp_id).css("color","black");
+                last_review = false;
+                console.log(last_review);
+
+            },
+            error : function(xhr,errmsg,err) {
+                console.log(xhr.status + ": " + xhr.responseText);
+            }
+        });
+    }
+}
+
+
+
+function show_more_exp_content(id){
+    var exp_id = $(id).attr("id").split("_")[3];
+    console.log(exp_id);
+    $.ajax({
+        url :  'http://127.0.0.1:8000/post/get_complete_user_experience/',
+        type : "GET",
+        data : {
+            exp_id: exp_id,
+            csrfmiddlewaretoken : csrftoken,
+        },
+        success : function(json) {
+            console.log("Its working!!!!");
+            $("#show_more_exp_" + json["exp_id"]).empty();
+            $("#show_more_exp_" + json["exp_id"]).append(json["content"]);
+            user_experience(json);
+        },
+        error : function(xhr,errmsg,err) {
+        console.log(xhr.status + ": " + xhr.responseText);
+        }
+    });
+    // console.log(id);
+}
+
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+
+function send_experience_post_request(){
+    $.ajax({
+        url :  'http://127.0.0.1:8000/post/retrieve_user_experience/',
+        type : "GET",
+        data : {
+            csrfmiddlewaretoken : csrftoken,
+        },
+        success : function(json) {
+            console.log("Its working!!!!");
+            console.log(json);
+            user_experience(json);
+        },
+        error : function(xhr,errmsg,err) {
+        console.log(xhr.status + ": " + xhr.responseText);
+        }
+    });
+}
+
+send_experience_post_request();
+
+
+
+
+function id_calculation(reply_id){
+    console.log("function calling");
+    var i=0;
+    var primary_comment_id = $(reply_id).parents(".new_comment").attr("id");
+    console.log(primary_comment_id)
+    var comment_id =primary_comment_id.split("_")[1];
+    // console.log(comment_id);
+    // console.log($("#"+primary_comment_id).find(".reply_secondary_input"));
+    $("#"+primary_comment_id).find(".reply_secondary_input").css({"display":"block"});
+    // $("#write_comment_parent_2").css({"display":"block"});
+    
+    var new_comment_input_dom =$("#"+primary_comment_id).find(".reply_secondary_input");
+    
+    function comment_on_comment_append(post){
+        var new_reply_dom =[
+            '<div class ="secondary_comment" onmouseenter ="on_hover_id_calculation('+primary_comment_id+'secondary_reply_'+post.comment_id+')" onmouseleave ="off_hover_id_calculation('+primary_comment_id+'secondary_reply_'+post.comment_id+')">',
+                '<span class="child_comment" id="'+primary_comment_id+'secondary_'+post.comment_id+'"><b class="username"><a href="http://127.0.0.1:8000/user-'+post.user_name+'">'+post.name+'</a>&nbsp;</b>'+post.content+'</span>',
+                '<span class="reply" onclick="id_calculation('+primary_comment_id+'secondary_'+post.comment_id+')" id="'+primary_comment_id+'secondary_reply_'+post.comment_id+'"><i class="material-icons reply_icon">reply</i></span>',
+            '</div>',
+        ].join("\n");
+        
+        $(new_reply_dom).insertBefore(new_comment_input_dom);
+        $("#" +primary_comment_id).find(".reply_secondary_input").find(".reply_comment_input").val("");
+        $("#"+primary_comment_id).find(".reply_secondary_input").css({"display":"none"});
+    }
+
+    comment_box_id =$("#"+primary_comment_id).find(".reply_secondary_input").attr("id");
+    new_write_comment = document.getElementById(comment_box_id);
+    new_write_comment.addEventListener("keyup", function(event) {
+    event.preventDefault();
+        if (event.keyCode === 13) {
+            var content =$(new_write_comment).find(".reply_comment_input").val();
+        
+            if(i==0){
+                $.ajax({
+                    url :"http://127.0.0.1:8000/post/create_experience_comment_on_comment/",
+                    type :"POST",
+                    data :{
+                        "comment_id": comment_id,
+                        "content": content,
+                        csrfmiddlewaretoken: csrftoken,
+                    },
+                    success:function(json){
+                        comment_on_comment_append(json);
+                    },
+                    error : function(xhr,errmsg,err) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                });
+                i=1;
+            }
+        }
+    });
+}
+
+
+
+
+
+function write_new_comment(exp_id){
+    new_write_comment_id =$("#user_write_comment_"+exp_id).attr("id");
+    var new_write_comment_dom =document.getElementById(new_write_comment_id);
+    var i=0;
+
+    function new_comment_append(post){
+        $(new_write_comment_dom).find(".write_comment").val("");
+        new_comment_parent_dom =$("#comment_section_"+exp_id);
+        console.log(new_comment_parent_dom);
+        new_comment_dom =[
+            '<div class="new_comment" id="parent_'+post.comment_id+'">',
+                    '<div class="primary_comment" onmouseenter=on_hover_id_calculation(primary_reply_'+post.comment_id+')  onmouseleave=off_hover_id_calculation(primary_reply_'+post.comment_id+')>',
+                        '<span class="parent_comment" id="primary_'+ post.comment_id +' "><b class="username"><a href="http://127.0.0.1:8000/user-'+post.name+' ">'+post.user_name+' </a>&nbsp;</b>'+post.content+'</span>',
+                        '<span class="reply" onclick="id_calculation(primary_reply_'+post.comment_id+')" id="primary_reply_'+post.comment_id+'"><i class="material-icons reply_icon">reply</i></span>',
+                    '</div>',
+                    '<div class="reply_comment" id="reply_comment_'+post.comment_id+' ">',
+                        '<div class="reply_secondary_input" id="write_comment_parent_'+post.comment_id+'">',
+                            '<input type="text" class="reply_comment_input" placeholder="Please write your comment here" name="">',
+                        '</div>',
+                    '</div>',
+                '</div>'
+        ].join("\n");
+
+        new_dom =$(new_comment_parent_dom).find(".new_comment")[0];
+        console.log(new_dom);
+        $(new_comment_dom).insertBefore(new_dom);
+    }
+
+    new_write_comment_dom.addEventListener("keyup",function(event){
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            var content =$(new_write_comment_dom).find(".write_comment").val();
+            console.log(exp_id);
+            if(i==0){
+                $.ajax({
+                    url :"http://127.0.0.1:8000/post/create_user_experience_comment/",
+                    type :"POST",
+                    data :{
+                        "exp_id" :exp_id,
+                        "content"  :content,
+                        csrfmiddlewaretoken : csrftoken,
+                    },
+                    success:function(json){
+                        console.log(json);
+                        new_comment_append(json);
+                    },
+                    error : function(xhr,errmsg,err) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                });
+                i=1;
+            }
+        }
+    });
+}
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

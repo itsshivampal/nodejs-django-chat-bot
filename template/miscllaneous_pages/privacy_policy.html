@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>www.xpiriance.com</title>
+          <meta name = "viewport" content = "width = device-width, initial-scale =1.0">
+          <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />      
+          <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+          <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+          <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+          <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style type="text/css">
+      .flow-text{
+        width: 92%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .about_text{
+        font-size: 230%;
+        font-family: 'Nunito Sans', sans-serif;
+      }
+      .important_text{
+        width: 92%;
+        font-size: 120%;
+        text-align: justify;
+      }
+      .bullet li {
+      list-style-type: disc;
+      list-style-position: inside;
+      padding: 8px 0 8px 16px;
+      text-indent: -1.5em;
+    }
+    .footer_item {
+        display: flex;
+
+      }
+      .footer_item li{
+       margin-left: 5%;
+      }
+      .icon a{
+        margin-left: 2%;
+        font-size: 110%;
+        color: #000;
+      }
+      .logo_name{
+        width: 11%;
+        margin-left: 10%;
+        margin-top: 1%;
+        text-align: center;
+      }
+      .login{
+        margin-right: 8%;
+        color: #000;
+      }
+      .nav-wrapper{
+        padding-right: 8%;
+      }
+      nav ul li:hover {
+   background-color: white;
+}
+       /* Start Responsive_ design*/
+
+ /* Start on mobile_device */
+
+     @media (max-width: 440px) {
+     body{
+      margin: 0;
+      padding: 0;
+      margin-right: 0;
+      padding-right: 0;
+     }
+     nav {
+      margin: 0;
+      padding: 0;
+     }
+     .logo_name{
+        width: 30%;
+        margin-left: 40%;
+        margin-top: 5%;
+        text-align: center;
+      }
+      .about_text{
+        font-size: 200%;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      .flow-text{
+        width: 100%;
+        margin-top: -1%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .page-footer {
+        visibility: hidden;
+        display: none;
+      }
+      .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .footer{
+        bottom: 2%;
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+
+     }
+
+     @media screen and (max-width: 640px) and (min-width: 440px)
+     {
+       body{
+      margin: 0;
+      padding: 0;
+      margin-right: 0;
+      padding-right: 0;
+     }
+     nav {
+      margin: 0;
+      padding: 0;
+     }
+     .logo_name{
+        width: 25%;
+        margin-left: 40%;
+        margin-top: 3%;
+        text-align: center;
+      }
+      .about_text{
+        font-size: 200%;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      .flow-text{
+        width: 100%;
+        margin-top: -1%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .page-footer {
+        visibility: hidden;
+        display: none;
+      }
+      .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .footer{
+        bottom: 2%;
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+
+
+     }
+
+    /* end mobile_device*/
+
+    /* Start on tab_device */
+    
+     @media screen and (max-width: 1007px) and (min-width: 641px){
+       
+     body{
+      margin: 0;
+      padding: 0;
+      margin-right: 0;
+      padding-right: 0;
+     }
+     nav {
+      margin: 0;
+      padding: 0;
+     }
+     .logo_name{
+        width: 15%;
+        margin-left: 35%;
+        margin-top: 2%;
+        text-align: center;
+      }
+      .about_text{
+        font-size: 200%;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      .flow-text{
+        width: 100%;
+        margin-top: -1%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .page-footer {
+        visibility: hidden;
+        display: none;
+      }
+      .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .footer{
+        bottom: 2%;
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+
+
+     }
+
+
+    /* End on tab_device */
+
+
+    /* Start on large_device */
+
+     @media (min-width: 1005px) {
+      
+      .footer-mob{
+        visibility: hidden;
+        display: none;
+      }
+      .footer{
+        visibility: hidden;
+        display: none;
+      }
+
+     }
+
+    /* End on large_device*/
+
+
+
+
+
+
+
+
+
+    /* End Responsive_design */
+    </style>
+    <body>
+    <nav>
+    <div class="nav-wrapper white">
+      <a href="/"><img src="../static/images/xpiriance_logo.png" class="logo_name"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/login/" class="login"><b>Login/Signup</b></a></li>
+      </ul>
+    </div>
+    </nav>
+    <div class="row">
+      <div class="col s2" style="color: transparent;">
+        .
+      </div>
+      <div class="col s12 m12 l7 xl7">
+         <p class="about_text">Privacy Policy</p><p class="flow-text">Effective Date : 25-12-2018</p>
+            <p class="flow-text">You can understand how and why Xpiriance collects, uses, and shares information about you when you use our websites, widgets, and other online services. This Privacy Policy applies to all of our Services, which maintains a separate privacy Policy that incorporates this Privacy Policy. </p> 
+
+             
+            <h5>What We Collect (Data)</h5>
+
+            <p class="flow-text"><b>Data You Provide To Us: </b> We collect Data you provide to us directly when you use the Services.</p>
+            <p class="flow-text"><b>Register :- </b> To create an account you need to provide data including your name, email address and/or mobile number, and a password. </p>
+            <p class="flow-text"><b>Profile :-  </b> We collect the content you submitted information on your profile, such as your work experience, skills, photo, city or area. You don’t have to provide additional information on your profile; however, profile information helps you to get more from our Services, including helping people and find you. It’s your choice whether to include sensitive information on your profile and to make that sensitive information public.</p>
+            <p class="flow-text"><b>Asking, Posting and Uploading :- </b> We collect the content you submit to the Services. This includes your posts and comments including saved drafts, your messages with other users (e.g., private messages, chats, and Posts), and your reports and other communications with moderators and with us. Your content may include text, links, images, gifs, and videos.</p>
+            <p class="flow-text">This includes your interactions with content, like voting, saving, hiding, and reporting. It also includes your interactions with other users, such as following, friending, and blocking. We collect your interactions with communities, like your subscriptions or moderator status. </p>
+
+            <h5>Information We Collect Automatically :</h5><h6> When you access or use our Services, we may also automatically collect information about you. this includes :-</h6>
+            <p class="flow-text"><b>Log and usage data :-  </b> We may log information when you access and use the Services. This may include your IP address, user-agent string, browser type, operating system, referral URLs, device information (e.g., device IDs), pages visited, links clicked, the requested URL, hardware settings, and search terms. Except for the IP address used to create your account.</p>
+            <p class="flow-text"><b>Cookies and similar technologies :- </b>  We may receive information from cookies, which are pieces of data your browser stores and sends back to us when making requests, and similar technologies. We use this information to improve your experience, understand user activity, personalize content and advertisements, and improve the quality of our Services. For example, we store and retrieve information about your preferred language and other settings. For more information on how you can disable cookies, please see “Your Choices” below.</p>
+            <p class="flow-text"><b>Location information :- </b> We may receive and process information about your location. For example, with your consent, we may collect information about the specific location of your device (for example, by using GPS or Bluetooth). We may also receive location information from you when you choose to share such information on our Services, including by associating your content with a location, or we may derive your approximate location from other information about you, including your IP address.</p>
+            <p class="flow-text"><b>Other :- </b> Our Services are dynamic, and we often introduce new features, which may require the collection of new information. If we collect materially different personal data or materially change how we use your data, we will notify you and may also modify this Privacy Policy.</p>
+           
+
+            <h5>How We Use Information About You :</h5>
+            <p class="flow-text">How we use your personal data will depend on which Services you use, how you use those Services and the choices you make in your settings. We use the data that we have about you to provide and personalize, including with the help of automated systems and inferences we make, our Services (including ads) so that they can be more relevant and useful to you and others.</p>
+
+            <h5>We use information about you to:</h5>
+          
+            <ul class="bullet">
+                <li class="important_text">Provide, maintain, and improve the Services;</li>
+                <li class="important_text">Research and develop new services;</li>
+                <li class="important_text">Help protect the safety of Xpiriance and our users, which includes blocking suspected spammers, addressing abuse, and enforcing the Xpiriance user agreement and our other policies;</li>
+                <li class="important_text">Send you technical notices, updates, security alerts, invoices and other support and administrative messages;</li>
+                <li class="important_text">Provide customer service;</li>
+                <li class="important_text">Communicate with you about products, services, offers, promotions, and events, and provide other news and information we think will be of interest to you (for information about how to opt out of these communications.</li>
+                <li class="important_text">Monitor and analyze trends, usage, and activities in connection with our Services.</li>
+                <li class="important_text">Personalize the Services and provide advertisements, content and features that match user profiles or interests. (for information about how to manage the types of advertisements you experience on our Services, see “Your Choices” below).</li>
+          </ul>
+          <h5>Advertising and Analytics :</h5>
+          <p class="flow-text">We may partner with third-party advertisers, ad networks, and analytics providers to deliver advertising and content targeted to your interests and to better understand your use of the Services. These third parties may collect information sent by your computer, browser, or mobile device in response to a request for content, such as unique identifiers, your IP address, or other information about your computer or device. </p>
+
+           <p class="flow-text"><b>Advertisers:- </b> Our ad partners and ad networks may use cookies and related technologies to collect information when ads are delivered to you on our Services, but Xpiriance does not link to or provide them with your actual Xpiriance account details. This means that Xpiriance does not share your individual account browsing habits with advertisers. Xpiriance cannot see advertisers’ cookies and advertisers will not see Xpiriance cookies. </p>
+           <p class="flow-text"><b>Analytics:- </b> We use analytics partners (such as Google Analytics) to help analyze usage and traffic for our Services. As an example, we may use analytics partners to analyze and measure, in the aggregate, the number of unique visitors to our Services. </p>
+           <h5>How We Share Information :</h5>
+           <h6>When you use the Services, certain information may be shared with other users and the public.</h6>
+           <ul class="bullet">
+             <li class="important_text">When you submit content such as a post or your opinion or chat to the Services, any visitors to and users of our Services will be able to see that content, the name associated with the content, and the date and time you originally submitted the content. Although some parts of the Services may be private or quarantined, they may become public  and you should take that into consideration before posting to the Services.</li>
+             <li class="important_text">When you ask to private messages, messages , or private chats, the recipients of those messages will be able to see the content of your message, your name, and the date and time the message was sent. Keep in mind that additional users may be invited to join a private chat after you send a message. If anonymously then hide name.</li>
+             <li class="important_text">When other users view your profile, they will be able to see information about your activities on the Services, such as your name, prior posts and comments, Xpert point, expert field and how much people help you.</li>
+             <li class="important_text">We offer social sharing features that let you share content or actions you take on our Services with other media. Your use of these features enables the sharing of certain information with your friends or the public, depending on the settings you establish with the third party that provides the social sharing feature. For more information about the purpose and scope of data collection and processing in connection with social sharing features, please visit the privacy policies of the third parties that provide these social sharing features (e.g., Quora, Facebook, and Twitter).</li>
+           </ul>
+           <h5>Your Choices:</h5>
+           <h6>you have choices about how to protect and limit the collection, use, and disclosure of information about you.</h6>
+           <p class="flow-text"><b>Accessing and Changing Your Information : </b> You can access and change certain information through the Services.</p>
+           <p class="flow-text"><b>Deleting Your Account :- </b> You may delete your account information at any time from the user preferences page. When you delete your account, your profile is no longer visible to other users and disassociated from content you posted under that account. Please note, however, that the posts, comments, and messages you submitted prior to deleting your account will still be visible to others unless you first delete the specific content.</p>
+           <h5>Controlling the Use of Cookies :</h5>
+           <p class="flow-text">Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject first- and third-party cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our Services.</p>
+
+           <h5>Controlling Location Information :</h5>
+           <p class="flow-text">If you initially consent to our collection of location information, you can subsequently stop the collection of this information at any time by changing the preferences on your device.</p>
+           <h5>Other Important Information :</h5>
+           <p class="flow-text"><b>Information Security :-</b>  We take measures to help protect information about you from loss, theft, misuse and unauthorized access, disclosure, alteration, and destruction. For example, we use HTTPS while information is being transmitted. We also enforce technical and administrative access controls to limit which of our employees have access to non -public personal information.</p>
+           <p class="flow-text"><b>Data Retention :- </b> We store the information we collect for as long as it is necessary for the purpose(s) for which we originally collected it. We may retain certain information for legitimate business purposes or as required by law.</p>
+           <p class="flow-text"><b>Contact Us : </b> If you have questions or complaints regarding this Policy, please first contact Xpiriance online (admin@xpiriance.com). You can also reach us by mail. If contacting us does not resolve your complaint, Call 11-356733</p>
+
+
+
+            
+        </div>
+        <div class="col s3" style="color: transparent;">
+          .
+        </div>
+      </div>
+      <footer class="page-footer teal">
+          <div class="container">
+            <div class="row">
+              <div class="col l12 offset-l2 s12">
+                <ul class="footer_item">
+                  <li><a class="grey-text text-lighten-3" href="../about-us/">About Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../contact/">Contact Us</a></li>                  
+                  <li><a class="grey-text text-lighten-3" href="../privacy-policy/">Privacy Policy</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../terms-conditions/">Term & Condition</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../career-with-us/">Career</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../business-with-us">Advertisement</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container" style="text-align: center;">
+             &copy; Xpiriance Copyright 2019.
+            <span style="margin-left: 5%;">Subscribe on</span>
+            <span class="icon">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            </span>
+            </div>
+          </div>
+        </footer>
+        <div class="footer">
+        <a href="../about-us" class="about_word">About Us</a>
+        <a href="../career-with-us" class="career_word">Career with Us</a>
+        <a href="../business-with-us" class="business_word">Business with Us</a>
+        <a href="../terms-conditions" class="term_word">Terms &amp; Conditions</a>
+        <a href="../privacy-policy" class="privacy_word">Privacy Policy</a>
+        <a href="../contact" class="contact_word">Contact Us</a>
+        </div>
+        <div class="footer-mob" style="text-align: center;">
+            <div class="container">
+            <span>Subscribe on</span>
+            <span class="icon">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            </span>
+            </div>
+            <span><br>&copy; Xpiriance Copyright 2019.</span>
+        </div>
+    </body>
+    </html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>www.xpiriance.com</title>
+          <meta name = "viewport" content = "width = device-width, initial-scale =1.0">
+          <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />      
+          <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+          <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+          <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+          <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style type="text/css">
+      .flow-text{
+        width: 92%;
+        font-size: 140%;
+        text-align: justify;
+      }
+      .about_text{
+        font-size: 250%;
+      }
+      .enquary{
+        width: 85%;
+        margin-top: 265px;
+      }
+      #text1 {
+        border: none;
+        padding: 1%;
+        width: 83%;
+        height: 150px;
+        margin-top: 20px;
+        border: 1px solid rgba(238,238,238 ,1);
+        margin-bottom: 5%;
+      }
+      .follow_button{
+  font-size: 100%;
+  padding: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  color:  #fff;
+  background-color: #085b80;
+  border: 1px solid #bdbdbd;
+  border-radius: 5%/10%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  margin-top: 10%;
+}
+      .search_in{
+  float: right;
+  margin-right: 0%;
+  float: left;
+  margin-top: 20px;
+  width: 85%;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid rgba(238,238,238 ,1);
+  outline-color: #06D85F;
+  text-align: left;
+  padding-left: 2%;
+
+}
+.footer_item {
+        display: flex;
+      }
+      .footer_item li{
+       margin-left: 5%;
+      }
+      .icon a{
+        margin-left: 2%;
+        font-size: 110%;
+        color: #000;
+      }
+       .logo_name{
+        width: 11%;
+        margin-left: 10%;
+        margin-top: 1%;
+        text-align: center;
+      }
+      .login{
+        margin-right: 8%;
+        color: #000;
+      }
+      .nav-wrapper{
+        padding-right: 8%;
+      }
+      nav ul li:hover {
+   background-color: white;
+}
+       /* Start Responsive_ design*/
+
+ /* Start on mobile_device */
+
+     @media (max-width: 440px) {
+     body{
+      margin: 0;
+      padding: 0;
+      margin-right: 0;
+      padding-right: 0;
+     }
+     nav {
+      margin: 0;
+      padding: 0;
+     }
+     .logo_name{
+        width: 30%;
+        margin-left: 40%;
+        margin-top: 5%;
+        text-align: center;
+      }
+      .about_text{
+        font-size: 200%;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      .flow-text{
+        width: 100%;
+        margin-top: -1%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .page-footer {
+        visibility: hidden;
+        display: none;
+      }
+      .search_in{
+  float: right;
+  margin-right: 0%;
+  float: left;
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid rgba(238,238,238 ,1);
+  outline-color: #06D85F;
+  text-align: left;
+  padding-left: 2%;
+
+}
+.enquary{
+        width: 100%;
+        margin-top: 265px;
+      }
+      #text1 {
+        border: none;
+        padding: 1%;
+        width: 98%;
+        height: 150px;
+        margin-top: 20px;
+        border: 1px solid rgba(238,238,238 ,1);
+        margin-bottom: 5%;
+      }
+      .footer-mob {
+        margin-top: -43%;
+      }
+      .req{
+        margin-top: 10%;
+        margin-left: 2%;
+      }
+      .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .footer{
+        bottom: 2%;
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+
+     }
+
+     @media screen and (max-width: 640px) and (min-width: 440px)
+     {
+       body{
+      margin: 0;
+      padding: 0;
+      margin-right: 0;
+      padding-right: 0;
+     }
+     nav {
+      margin: 0;
+      padding: 0;
+     }
+     .logo_name{
+        width: 25%;
+        margin-left: 40%;
+        margin-top: 3%;
+        text-align: center;
+      }
+      .about_text{
+        font-size: 200%;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      .flow-text{
+        width: 100%;
+        margin-top: -1%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .page-footer {
+        visibility: hidden;
+        display: none;
+      }
+      .search_in{
+  float: right;
+  margin-right: 0%;
+  float: left;
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid rgba(238,238,238 ,1);
+  outline-color: #06D85F;
+  text-align: left;
+  padding-left: 2%;
+
+}
+.enquary{
+        width: 100%;
+        margin-top: 265px;
+      }
+      #text1 {
+        border: none;
+        padding: 1%;
+        width: 98%;
+        height: 150px;
+        margin-top: 20px;
+        border: 1px solid rgba(238,238,238 ,1);
+        margin-bottom: 5%;
+      }
+      .req{
+        margin-top: 10%;
+        margin-left: 2%;
+      }
+      .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .footer{
+        bottom: -2%;
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+
+
+     }
+
+    /* end mobile_device*/
+
+    /* Start on tab_device */
+    
+     @media screen and (max-width: 1007px) and (min-width: 641px){
+       
+     body{
+      margin: 0;
+      padding: 0;
+      margin-right: 0;
+      padding-right: 0;
+     }
+     nav {
+      margin: 0;
+      padding: 0;
+     }
+     .logo_name{
+        width: 15%;
+        margin-left: 35%;
+        margin-top: 2%;
+        text-align: center;
+      }
+      .about_text{
+        font-size: 200%;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        margin-top: 3%;
+        margin-bottom: 1%;
+      }
+      .flow-text{
+        width: 100%;
+        margin-top: -1%;
+        font-size: 130%;
+        text-align: justify;
+      }
+      .page-footer {
+        visibility: hidden;
+        display: none;
+      }
+      .search_in{
+  float: right;
+  margin-right: 0%;
+  float: left;
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid rgba(238,238,238 ,1);
+  outline-color: #06D85F;
+  text-align: left;
+  padding-left: 2%;
+
+}
+.enquary{
+        width: 100%;
+        margin-top: 265px;
+      }
+      #text1 {
+        border: none;
+        padding: 1%;
+        width: 98%;
+        height: 150px;
+        margin-top: 20px;
+        border: 1px solid rgba(238,238,238 ,1);
+        margin-bottom: 5%;
+      }
+      .req{
+        margin-top: 10%;
+        margin-left: 2%;
+      }
+      .about_word{
+          color: #aaa;
+          margin-left: 20px;
+          margin-top: 20px;
+    }
+    .career_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .business_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .term_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .privacy_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .contact_word{
+        margin-left: 20px; 
+        font-size: 15px; 
+        color: #aaa;
+    }
+    .footer{
+        bottom: 2%;
+        text-align: center;
+    }
+    .footer-mob {
+      margin-top: 8%;
+    }
+
+
+
+     }
+
+
+    /* End on tab_device */
+
+
+    /* Start on large_device */
+
+     @media (min-width: 1005px) {
+      
+      .footer-mob{
+        visibility: hidden;
+        display: none;
+      }
+      .footer{
+        visibility: hidden;
+        display: none;
+      }
+
+     }
+
+    /* End on large_device*/
+
+
+
+
+
+
+
+
+
+    /* End Responsive_design */
+    </style>
+    <body>
+    <nav>
+    <div class="nav-wrapper white">
+      <a href="/"><img src="../static/images/xpiriance_logo.png" class="logo_name"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="../login/" class="login"><b>Login/Signup</b></a></li>
+      </ul>
+    </div>
+    </nav>
+    <div class="row">
+      <div class="col l2 xl2" style="color: transparent;">
+        .
+      </div>
+      <div class="col s12 m12 l7 xl7">
+         <p class="about_text">Contact Us :</p><h6 class="req">Submit a request*</h6>
+         <form><input  class="search_in" placeholder="Full Name *"/></form>
+         <form><input  class="search_in" placeholder="Email address *"/></form>
+         <form><input  class="search_in" placeholder="Phone No. *"/></form>
+         <form><input  class="search_in" placeholder="Country *"/></form>
+        <div class="enquary">
+          <select class="browser-default">
+            <option value="" disabled selected>Enquiry Type *</option>
+        <option value="1">Advertisement</option>
+        <option value="2">Can't Login</option>
+        <option value="3">Product Feedback</option>
+        <option value="3">Report a fake account</option>
+        <option value="3">Technical problem</option>
+        <option value="3">Under_age User</option>
+        <option value="3">Account verfication</option>
+        <option value="3">leave Xpiriance</option>
+        <option value="3">Other</option>
+
+        </select>
+         </div> 
+         <div><textarea placeholder="Please describe in details *" class="materialize-textarea" id="text1"></textarea></div>
+         <a href="" class="follow_button">Submit</a>
+         <p style="margin-top: 5%;">Our Support Team Respond within 24 hours</p>   
+        </div>
+
+        <div class="col l3 xl3">
+          
+        </div>
+      </div>
+      <footer class="page-footer  cyan">
+          <div class="container">
+            <div class="row">
+              <div class="col l12 offset-l2 s12">
+                <ul class="footer_item">
+                  <li><a class="grey-text text-lighten-3" href="../about-us/">About Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../contact/">Contact Us</a></li>                  
+                  <li><a class="grey-text text-lighten-3" href="../privacy-policy/">Privacy Policy</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../terms-conditions/">Term & Condition</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../career-with-us/">Career</a></li>
+                  <li><a class="grey-text text-lighten-3" href="../business-with-us">Advertisement</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container" style="text-align: center;">
+            &copy; Xpiriance Copyright 2019.
+            <span style="margin-left: 5%;">Subscribe on</span>
+            <span class="icon">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            </span>
+            </div>
+          </div>
+        </footer>
+        <div class="footer">
+        <a href="../about-us" class="about_word">About Us</a>
+        <a href="../career-with-us" class="career_word">Career with Us</a>
+        <a href="../business-with-us" class="business_word">Business with Us</a>
+        <a href="../terms-conditions" class="term_word">Terms &amp; Conditions</a>
+        <a href="../privacy-policy" class="privacy_word">Privacy Policy</a>
+        <a href="../contact" class="contact_word">Contact Us</a>
+        </div>
+        <div class="footer-mob" style="text-align: center;">
+            <div class="container">
+            <span>Subscribe on</span>
+            <span class="icon">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            </span>
+            </div>
+            <span><br>&copy; Xpiriance Copyright 2019.</span>
+        </div>
+    </body>
+    </html>
