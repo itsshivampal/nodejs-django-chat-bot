@@ -1,1 +1,1 @@
-# Node.js Chat Bot
+# Node.js Chat Bot with Django backend framework
